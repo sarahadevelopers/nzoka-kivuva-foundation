@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Involved | Nzoka Kivuva Foundation</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome 6 (Free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <style>
+        /* ============================================================
+               ROOT DESIGN SYSTEM (Premium NGO Palette)
+               ============================================================ */
+        :root {
+            --color-primary-dark: #064e3b;
+            --color-primary-base: #0b6623;
+            --color-accent-gold: #f59e0b;
+            --color-accent-blue: #2563eb;
+            --color-white: #ffffff;
+            --color-off-white: #f8fafc;
+            --color-slate-light: #e2e8f0;
+            --text-primary-dark: #0f172a;
+            --text-secondary-muted: #475569;
+            --text-disabled: #94a3b8;
+            --border-radius-pill: 50px;
+            --border-radius-card: 16px;
+            --border-radius-sm: 8px;
+            --transition-premium: cubic-bezier(0.4, 0, 0.2, 1);
+            --fs-h1: 34px;
+            --fs-h2: 28px;
+            --fs-h3: 24px;
+            --fs-h4: 22px;
+            --fs-h5: 18px;
+            --fs-body: 14px;
+            --fs-small: 12px;
+        }
+
+        /* ============================================================
+               RESET & BASE
+               ============================================================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-size: var(--fs-body);
+            color: var(--text-primary-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background: var(--color-white);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .section-padding {
+            padding: 96px 0;
+        }
+
+        .section-padding-sm {
+            padding: 64px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* ============================================================
+               TYPOGRAPHY
+               ============================================================ */
+        h1 {
+            font-size: var(--fs-h1);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--text-primary-dark);
+        }
+
+        h2 {
+            font-size: var(--fs-h2);
+            font-weight: 700;
+            line-height: 1.25;
+            letter-spacing: -0.015em;
+            color: var(--text-primary-dark);
+        }
+
+        h3 {
+            font-size: var(--fs-h3);
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-primary-dark);
+        }
+
+        p {
+            font-size: var(--fs-body);
+            color: var(--text-secondary-muted);
+            line-height: 1.7;
+        }
+
+        .text-small {
+            font-size: var(--fs-small);
+            letter-spacing: 0.04em;
+            color: var(--text-disabled);
+        }
+
+        .text-uppercase {
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .tag {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--color-accent-blue);
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .tag-green {
+            color: var(--color-primary-base);
+        }
+
+        /* ============================================================
+               BUTTONS
+               ============================================================ */
+        .btn-cta {
+            display: inline-block;
+            background: var(--color-accent-gold);
+            color: var(--color-white);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.9rem 2.4rem;
+            border-radius: var(--border-radius-pill);
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s var(--transition-premium), box-shadow 0.3s var(--transition-premium);
+            text-align: center;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(245, 158, 11, 0.25);
+        }
+
+        .btn-primary-pill {
+            display: inline-block;
+            background: var(--color-primary-dark);
+            color: var(--color-white);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.9rem 2.6rem;
+            border-radius: var(--border-radius-pill);
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s var(--transition-premium), transform 0.3s var(--transition-premium);
+            text-align: center;
+        }
+
+        .btn-primary-pill:hover {
+            background: var(--color-primary-base);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(6, 78, 59, 0.2);
+        }
+
+        .btn-outline-dark {
+            display: inline-block;
+            background: transparent;
+            color: var(--text-primary-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.9rem 2.6rem;
+            border-radius: var(--border-radius-pill);
+            border: 2px solid var(--color-slate-light);
+            cursor: pointer;
+            transition: all 0.3s var(--transition-premium);
+            text-align: center;
+        }
+
+        .btn-outline-dark:hover {
+            border-color: var(--color-primary-dark);
+            background: var(--color-off-white);
+            transform: translateY(-3px);
+        }
+
+        /* ============================================================
+               NAVBAR
+               ============================================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.4s var(--transition-premium), box-shadow 0.4s var(--transition-premium);
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .navbar .logo img {
+            height: 38px;
+            width: auto;
+            transition: filter 0.3s var(--transition-premium);
+            filter: brightness(0) invert(1);
+        }
+
+        .navbar.scrolled .logo img {
+            filter: brightness(0) invert(0);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8);
+            transition: color 0.3s var(--transition-premium);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent-gold);
+            transition: width 0.3s var(--transition-premium);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-white);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .navbar.scrolled .nav-links a {
+            color: var(--text-secondary-muted);
+        }
+
+        .navbar.scrolled .nav-links a:hover {
+            color: var(--text-primary-dark);
+        }
+
+        .navbar.scrolled .nav-links a::after {
+            background: var(--color-primary-dark);
+        }
+
+        .nav-links a.active {
+            color: var(--color-white);
+        }
+
+        .navbar.scrolled .nav-links a.active {
+            color: var(--color-primary-dark);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .navbar.scrolled .nav-links a.active::after {
+            background: var(--color-primary-dark);
+        }
+
+        .nav-cta {
+            background: var(--color-accent-gold);
+            color: var(--color-white) !important;
+            padding: 0.5rem 1.6rem;
+            border-radius: var(--border-radius-pill);
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: transform 0.3s var(--transition-premium), box-shadow 0.3s var(--transition-premium);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
+            color: var(--color-white) !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            padding: 4px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: var(--color-white);
+            border-radius: 4px;
+            transition: all 0.3s var(--transition-premium);
+            transform-origin: center;
+        }
+
+        .navbar.scrolled .hamburger span {
+            background: var(--text-primary-dark);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(6, 78, 59, 0.98);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s var(--transition-premium), visibility 0.4s var(--transition-premium);
+        }
+
+        .mobile-menu.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu a {
+            color: var(--color-white);
+            font-size: 1.6rem;
+            font-weight: 500;
+            transition: opacity 0.3s var(--transition-premium);
+        }
+
+        .mobile-menu a:hover {
+            opacity: 0.7;
+        }
+
+        .mobile-menu .mobile-cta {
+            background: var(--color-accent-gold);
+            color: var(--color-white);
+            padding: 0.8rem 2.4rem;
+            border-radius: var(--border-radius-pill);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* ============================================================
+               GET INVOLVED HERO
+               ============================================================ */
+        .involved-hero {
+            padding: 160px 0 48px;
+            background: var(--color-white);
+        }
+
+        .involved-hero .container {
+            max-width: 1000px;
+        }
+
+        .involved-hero .tag {
+            color: var(--color-primary-base);
+        }
+
+        .involved-hero h1 {
+            font-size: clamp(34px, 5vw, 52px);
+            max-width: 720px;
+            margin-bottom: 12px;
+            letter-spacing: -0.025em;
+        }
+
+        .involved-hero p {
+            max-width: 560px;
+            font-size: 1.05rem;
+            color: var(--text-secondary-muted);
+        }
+
+        /* ============================================================
+               INVOLVED PORTAL
+               ============================================================ */
+        .involved-portal {
+            background: var(--color-white);
+            padding-bottom: 96px;
+        }
+
+        .portal-wrapper {
+            max-width: 740px;
+            margin: 0 auto;
+        }
+
+        /* Tab Navigation */
+        .tab-nav {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 40px;
+            background: var(--color-off-white);
+            border-radius: var(--border-radius-card);
+            padding: 8px;
+            border: 1px solid var(--color-slate-light);
+        }
+
+        .tab-btn {
+            padding: 14px 8px;
+            border: none;
+            background: transparent;
+            border-radius: var(--border-radius-sm);
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary-muted);
+            cursor: pointer;
+            transition: all 0.3s var(--transition-premium);
+            text-align: center;
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+        }
+
+        .tab-btn i {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 4px;
+            color: var(--text-disabled);
+            transition: color 0.3s var(--transition-premium);
+        }
+
+        .tab-btn.active {
+            background: var(--color-white);
+            color: var(--text-primary-dark);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        .tab-btn.active i {
+            color: var(--color-primary-base);
+        }
+
+        .tab-btn:hover:not(.active) {
+            color: var(--text-primary-dark);
+        }
+
+        .tab-btn:hover:not(.active) i {
+            color: var(--text-secondary-muted);
+        }
+
+        /* Tab Panels */
+        .tab-panel {
+            display: none;
+            animation: panelFade 0.4s var(--transition-premium);
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        @keyframes panelFade {
+            0% {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Form Styles */
+        .form-card {
+            background: var(--color-off-white);
+            border-radius: var(--border-radius-card);
+            padding: 40px 44px 48px;
+            border: 1px solid var(--color-slate-light);
+        }
+
+        .form-card .form-header {
+            margin-bottom: 28px;
+        }
+
+        .form-card .form-header h3 {
+            font-size: 22px;
+            margin-bottom: 4px;
+        }
+
+        .form-card .form-header p {
+            font-size: 14px;
+            color: var(--text-secondary-muted);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-disabled);
+            margin-bottom: 4px;
+        }
+
+        .form-group label .required {
+            color: #b91c1c;
+            margin-left: 2px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--color-slate-light);
+            border-radius: var(--border-radius-sm);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            background: var(--color-white);
+            color: var(--text-primary-dark);
+            transition: border-color 0.3s var(--transition-premium), box-shadow 0.3s var(--transition-premium);
+            appearance: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-primary-base);
+            box-shadow: 0 0 0 4px rgba(11, 102, 35, 0.06);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-group select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-card .btn-cta {
+            width: 100%;
+            justify-content: center;
+            padding: 14px;
+            font-size: 15px;
+            margin-top: 4px;
+        }
+
+        .form-feedback {
+            margin-top: 16px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .form-feedback.success {
+            color: var(--color-primary-base);
+        }
+
+        .form-feedback.error {
+            color: #b91c1c;
+        }
+
+        /* Channel icons in form header */
+        .channel-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(11, 102, 35, 0.06);
+            color: var(--color-primary-base);
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .channel-icon.gold {
+            background: rgba(245, 158, 11, 0.08);
+            color: var(--color-accent-gold);
+        }
+
+        .channel-icon.blue {
+            background: rgba(37, 99, 235, 0.08);
+            color: var(--color-accent-blue);
+        }
+
+        .channel-icon.purple {
+            background: rgba(139, 92, 246, 0.08);
+            color: #7c3aed;
+        }
+
+        /* ============================================================
+               FOOTER
+               ============================================================ */
+        .footer {
+            background: #0b1a1a;
+            color: rgba(255, 255, 255, 0.75);
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-brand .logo-footer img {
+            height: 36px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            max-width: 340px;
+            line-height: 1.7;
+        }
+
+        .footer-col h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-col address {
+            font-style: normal;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+        }
+
+        .footer-col address i {
+            margin-right: 0.6rem;
+            width: 18px;
+            color: var(--color-accent-gold);
+            opacity: 0.6;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.55);
+            transition: color 0.3s var(--transition-premium);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--color-white);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-top: 2rem;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-bottom .credit a {
+            color: rgba(255, 255, 255, 0.4);
+            transition: color 0.3s var(--transition-premium);
+            font-weight: 500;
+        }
+
+        .footer-bottom .credit a:hover {
+            color: var(--color-white);
+        }
+
+        /* ============================================================
+               REVEAL ANIMATIONS
+               ============================================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.8s var(--transition-premium), transform 0.8s var(--transition-premium);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-d1 {
+            transition-delay: 0.05s;
+        }
+        .reveal-d2 {
+            transition-delay: 0.12s;
+        }
+        .reveal-d3 {
+            transition-delay: 0.20s;
+        }
+        .reveal-d4 {
+            transition-delay: 0.28s;
+        }
+
+        /* ============================================================
+               RESPONSIVE
+               ============================================================ */
+
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .navbar .logo img {
+                height: 30px;
+            }
+
+            .involved-hero {
+                padding: 120px 0 32px;
+            }
+            .involved-hero h1 {
+                font-size: 30px;
+            }
+
+            .tab-nav {
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+                padding: 6px;
+            }
+
+            .tab-btn {
+                font-size: 12px;
+                padding: 12px 6px;
+            }
+            .tab-btn i {
+                font-size: 16px;
+            }
+
+            .form-card {
+                padding: 28px 20px 32px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            .container {
+                padding: 0 4%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .involved-hero h1 {
+                font-size: 26px;
+            }
+
+            .tab-nav {
+                grid-template-columns: 1fr 1fr;
+                gap: 4px;
+                padding: 4px;
+            }
+
+            .tab-btn {
+                font-size: 11px;
+                padding: 10px 4px;
+                border-radius: 4px;
+            }
+            .tab-btn i {
+                font-size: 14px;
+                margin-bottom: 2px;
+            }
+
+            .form-card {
+                padding: 20px 16px 24px;
+            }
+
+            .form-card .form-header h3 {
+                font-size: 19px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================================
+    NAVBAR
+    ============================================================ -->
+    <header class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="logo">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 60'%3E%3Crect width='300' height='60' fill='none'/%3E%3Ctext x='0' y='38' font-family='Inter, sans-serif' font-size='20' font-weight='800' fill='white'%3ENZIOKA KIVUVA%3C/text%3E%3Ctext x='172' y='38' font-family='Inter, sans-serif' font-size='14' font-weight='300' fill='rgba(255,255,255,0.7)'%3EFOUNDATION%3C/text%3E%3C/svg%3E" alt="Nzoka Kivuva Foundation Logo" />
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="get-involved.html" class="active">Get Involved</a></li>
+            <li><a href="contact.html" class="nav-cta">Contact</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="about.html" class="mobile-link">About</a>
+        <a href="programs.html" class="mobile-link">Programs</a>
+        <a href="gallery.html" class="mobile-link">Gallery</a>
+        <a href="get-involved.html" class="mobile-link">Get Involved</a>
+        <a href="contact.html" class="mobile-cta">Contact</a>
+    </div>
+
+    <!-- ============================================================
+    GET INVOLVED HERO
+    ============================================================ -->
+    <section class="involved-hero" id="involved">
+        <div class="container">
+            <span class="tag reveal">Take Action</span>
+            <h1 class="reveal reveal-d1">Join us in shaping Kenya's future.</h1>
+            <p class="reveal reveal-d2">
+                Whether you're a student seeking a scholarship, a coach registering a team, a corporate partner, or a volunteer — your contribution matters.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    INVOLVED PORTAL
+    ============================================================ -->
+    <section class="involved-portal">
+        <div class="container">
+            <div class="portal-wrapper">
+
+                <!-- Tab Navigation -->
+                <div class="tab-nav reveal">
+                    <button class="tab-btn active" data-tab="scholarship">
+                        <i class="fas fa-graduation-cap"></i>
+                        Scholarship
+                    </button>
+                    <button class="tab-btn" data-tab="club">
+                        <i class="fas fa-futbol"></i>
+                        Sports Club
+                    </button>
+                    <button class="tab-btn" data-tab="partner">
+                        <i class="fas fa-handshake"></i>
+                        Partnership
+                    </button>
+                    <button class="tab-btn" data-tab="volunteer">
+                        <i class="fas fa-hands-helping"></i>
+                        Volunteer
+                    </button>
+                </div>
+
+                <!-- ============================================================
+                PANEL 1: SCHOLARSHIP
+                ============================================================ -->
+                <div class="tab-panel active" id="panel-scholarship">
+                    <div class="form-card reveal">
+                        <div class="form-header">
+                            <div class="channel-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <h3>Apply for a Sports-Linked Scholarship</h3>
+                            <p>For students who excel in both academics and sports. Submit your application to access tuition support, learning materials, and mentorship.</p>
+                        </div>
+
+                        <form class="scholarship-form" id="scholarshipForm" novalidate>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="s_fullName">Full Name <span class="required">*</span></label>
+                                    <input type="text" id="s_fullName" placeholder="Your full name" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="s_dob">Date of Birth <span class="required">*</span></label>
+                                    <input type="date" id="s_dob" required />
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="s_email">Email Address <span class="required">*</span></label>
+                                    <input type="email" id="s_email" placeholder="you@example.com" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="s_phone">Phone Number <span class="required">*</span></label>
+                                    <input type="tel" id="s_phone" placeholder="+254 7XX XXX XXX" required />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="s_school">Current School / Institution <span class="required">*</span></label>
+                                <input type="text" id="s_school" placeholder="Name of your school" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="s_grade">Current Grade / Form <span class="required">*</span></label>
+                                <select id="s_grade" required>
+                                    <option value="">Select your grade</option>
+                                    <option value="form1">Form 1</option>
+                                    <option value="form2">Form 2</option>
+                                    <option value="form3">Form 3</option>
+                                    <option value="form4">Form 4</option>
+                                    <option value="primary">Primary School</option>
+                                    <option value="vocational">Vocational Training</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="s_sport">Primary Sport <span class="required">*</span></label>
+                                <input type="text" id="s_sport" placeholder="e.g., Football, Athletics, Volleyball" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="s_achievements">Sports & Academic Achievements</label>
+                                <textarea id="s_achievements" placeholder="Tell us about your achievements, leadership roles, or community involvement..." rows="3"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="s_message">Why do you want this scholarship? <span class="required">*</span></label>
+                                <textarea id="s_message" placeholder="Describe how this scholarship would impact your education and future..." rows="3" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-cta">Submit Scholarship Application</button>
+                            <div class="form-feedback" id="s_feedback"></div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- ============================================================
+                PANEL 2: SPORTS CLUB
+                ============================================================ -->
+                <div class="tab-panel" id="panel-club">
+                    <div class="form-card reveal">
+                        <div class="form-header">
+                            <div class="channel-icon gold"><i class="fas fa-futbol"></i></div>
+                            <h3>Register a Local Sports Club</h3>
+                            <p>For coaches, team managers, or community sports organizers. Register your club to access tournaments, training, and development programs.</p>
+                        </div>
+
+                        <form class="club-form" id="clubForm" novalidate>
+                            <div class="form-group">
+                                <label for="c_clubName">Club / Team Name <span class="required">*</span></label>
+                                <input type="text" id="c_clubName" placeholder="e.g., Makueni United FC" required />
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="c_contactName">Contact Person <span class="required">*</span></label>
+                                    <input type="text" id="c_contactName" placeholder="Full name" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="c_contactPhone">Phone Number <span class="required">*</span></label>
+                                    <input type="tel" id="c_contactPhone" placeholder="+254 7XX XXX XXX" required />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="c_email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="c_email" placeholder="club@example.com" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="c_location">Location / Sub-County <span class="required">*</span></label>
+                                <input type="text" id="c_location" placeholder="e.g., Wote, Makueni" required />
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="c_sport">Primary Sport <span class="required">*</span></label>
+                                    <select id="c_sport" required>
+                                        <option value="">Select sport</option>
+                                        <option value="football">Football</option>
+                                        <option value="volleyball">Volleyball</option>
+                                        <option value="basketball">Basketball</option>
+                                        <option value="athletics">Athletics</option>
+                                        <option value="netball">Netball</option>
+                                        <option value="rugby">Rugby</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="c_players">Number of Players <span class="required">*</span></label>
+                                    <input type="number" id="c_players" placeholder="e.g., 25" min="1" required />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="c_ages">Age Groups Represented</label>
+                                <input type="text" id="c_ages" placeholder="e.g., Under-15, Under-17, Senior" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="c_description">About Your Club</label>
+                                <textarea id="c_description" placeholder="Tell us about your club's history, values, and community involvement..." rows="3"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-cta">Register Club</button>
+                            <div class="form-feedback" id="c_feedback"></div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- ============================================================
+                PANEL 3: PARTNERSHIP
+                ============================================================ -->
+                <div class="tab-panel" id="panel-partner">
+                    <div class="form-card reveal">
+                        <div class="form-header">
+                            <div class="channel-icon blue"><i class="fas fa-handshake"></i></div>
+                            <h3>Become a Corporate or County Partner</h3>
+                            <p>For institutions, county governments, corporations, and organizations looking to collaborate on youth sports and education initiatives.</p>
+                        </div>
+
+                        <form class="partner-form" id="partnerForm" novalidate>
+                            <div class="form-group">
+                                <label for="p_orgName">Organization / Institution Name <span class="required">*</span></label>
+                                <input type="text" id="p_orgName" placeholder="Full legal name" required />
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="p_contactName">Primary Contact Person <span class="required">*</span></label>
+                                    <input type="text" id="p_contactName" placeholder="Full name" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="p_contactTitle">Job Title <span class="required">*</span></label>
+                                    <input type="text" id="p_contactTitle" placeholder="e.g., CSR Manager" required />
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="p_email">Email Address <span class="required">*</span></label>
+                                    <input type="email" id="p_email" placeholder="contact@organization.com" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="p_phone">Phone Number <span class="required">*</span></label>
+                                    <input type="tel" id="p_phone" placeholder="+254 7XX XXX XXX" required />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="p_partnershipType">Type of Partnership <span class="required">*</span></label>
+                                <select id="p_partnershipType" required>
+                                    <option value="">Select partnership type</option>
+                                    <option value="financial">Financial Sponsorship</option>
+                                    <option value="infrastructure">Infrastructure / Facilities Support</option>
+                                    <option value="equipment">Sports Equipment / Materials</option>
+                                    <option value="scholarship">Scholarship Funding</option>
+                                    <option value="capacity">Capacity Building / Training</option>
+                                    <option value="policy">Policy & Advocacy Support</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="p_scope">Geographic Scope</label>
+                                <select id="p_scope">
+                                    <option value="makueni">Makueni County</option>
+                                    <option value="regional">Regional (Eastern Kenya)</option>
+                                    <option value="national">National</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="p_message">Partnership Proposal <span class="required">*</span></label>
+                                <textarea id="p_message" placeholder="Describe how you envision partnering with the foundation. What resources, expertise, or support can you offer?" rows="4" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-cta">Submit Partnership Proposal</button>
+                            <div class="form-feedback" id="p_feedback"></div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- ============================================================
+                PANEL 4: VOLUNTEER
+                ============================================================ -->
+                <div class="tab-panel" id="panel-volunteer">
+                    <div class="form-card reveal">
+                        <div class="form-header">
+                            <div class="channel-icon purple"><i class="fas fa-hands-helping"></i></div>
+                            <h3>Volunteer & Mentor Application</h3>
+                            <p>For individuals passionate about youth development. Share your skills, time, and experience to make a difference in grassroots communities.</p>
+                        </div>
+
+                        <form class="volunteer-form" id="volunteerForm" novalidate>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="v_fullName">Full Name <span class="required">*</span></label>
+                                    <input type="text" id="v_fullName" placeholder="Your full name" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="v_dob">Date of Birth</label>
+                                    <input type="date" id="v_dob" />
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="v_email">Email Address <span class="required">*</span></label>
+                                    <input type="email" id="v_email" placeholder="you@example.com" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="v_phone">Phone Number <span class="required">*</span></label>
+                                    <input type="tel" id="v_phone" placeholder="+254 7XX XXX XXX" required />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="v_location">County / Location <span class="required">*</span></label>
+                                <input type="text" id="v_location" placeholder="e.g., Makueni, Kajiado, Nairobi" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="v_skills">Skills & Expertise <span class="required">*</span></label>
+                                <input type="text" id="v_skills" placeholder="e.g., Coaching, Teaching, Mentorship, IT, Administration" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="v_availability">Availability</label>
+                                <select id="v_availability">
+                                    <option value="">Select availability</option>
+                                    <option value="weekdays">Weekdays</option>
+                                    <option value="weekends">Weekends</option>
+                                    <option value="evenings">Evenings</option>
+                                    <option value="flexible">Flexible</option>
+                                    <option value="events">Only for events/tournaments</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="v_interest">Area of Interest <span class="required">*</span></label>
+                                <select id="v_interest" required>
+                                    <option value="">Select primary interest</option>
+                                    <option value="coaching">Sports Coaching</option>
+                                    <option value="mentorship">Youth Mentorship</option>
+                                    <option value="education">Educational Support / Tutoring</option>
+                                    <option value="events">Event Organization / Tournaments</option>
+                                    <option value="administration">Administration / Coordination</option>
+                                    <option value="media">Media / Photography / Content</option>
+                                    <option value="health">Health & Wellness Programs</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="v_message">Why do you want to volunteer? <span class="required">*</span></label>
+                                <textarea id="v_message" placeholder="Tell us about your motivation, experience, and how you'd like to contribute..." rows="3" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-cta">Submit Volunteer Application</button>
+                            <div class="form-feedback" id="v_feedback"></div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-grid container">
+            <div class="footer-brand">
+                <div class="logo-footer">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 60'%3E%3Crect width='300' height='60' fill='none'/%3E%3Ctext x='0' y='38' font-family='Inter, sans-serif' font-size='20' font-weight='800' fill='white'%3ENZIOKA KIVUVA%3C/text%3E%3Ctext x='172' y='38' font-family='Inter, sans-serif' font-size='14' font-weight='300' fill='rgba(255,255,255,0.5)'%3EFOUNDATION%3C/text%3E%3C/svg%3E" alt="Nzoka Kivuva Foundation" />
+                </div>
+                <p>A registered foundation dedicated to youth empowerment, sports equity, and community transformation across Kenya.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Our Locations</h4>
+                <address>
+                    <i class="fas fa-building"></i> <strong>Head Office:</strong><br />
+                    Top Doctors Plaza, 4th Floor<br />
+                    Old Namanga Road, Kitengela<br /><br />
+                    <i class="fas fa-map-pin"></i> <strong>Field Hub:</strong><br />
+                    Makueni County, Kenya
+                </address>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Our Programs</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="get-involved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="footer-bottom">
+                <span>&copy; 2026 Nzoka Kivuva Foundation. All Rights Reserved.</span>
+                <span class="credit">
+                    Designed &amp; Developed by <a href="https://sarahadevelopers.co.ke/" target="_blank" rel="noopener">Saraha Developers</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // ---------- 1. NAVBAR SCROLL ----------
+            const navbar = document.getElementById('navbar');
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            window.addEventListener('scroll', function() {
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                navbar.classList.toggle('scrolled', currentScroll > 30);
+            });
+
+            // ---------- 2. HAMBURGER ----------
+            hamburger.addEventListener('click', function() {
+                const isOpen = mobileMenu.classList.toggle('open');
+                hamburger.classList.toggle('active');
+                hamburger.setAttribute('aria-expanded', isOpen);
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+            });
+
+            document.querySelectorAll('.mobile-link, .mobile-cta').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('open');
+                    hamburger.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                    mobileMenu.classList.remove('open');
+                    hamburger.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // ---------- 3. SCROLL REVEAL ----------
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.10,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            revealElements.forEach(function(el) {
+                revealObserver.observe(el);
+            });
+
+            // ---------- 4. TAB SWITCHER ----------
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const panels = {
+                scholarship: document.getElementById('panel-scholarship'),
+                club: document.getElementById('panel-club'),
+                partner: document.getElementById('panel-partner'),
+                volunteer: document.getElementById('panel-volunteer')
+            };
+
+            tabBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    // Remove active from all tabs
+                    tabBtns.forEach(function(b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+
+                    // Hide all panels
+                    Object.values(panels).forEach(function(p) { p.classList.remove('active'); });
+
+                    // Show the selected panel
+                    const tab = btn.getAttribute('data-tab');
+                    if (panels[tab]) {
+                        panels[tab].classList.add('active');
+                    }
+
+                    // Re-trigger reveal animations on the new panel
+                    const newReveals = panels[tab].querySelectorAll('.reveal');
+                    newReveals.forEach(function(el) {
+                        if (!el.classList.contains('visible')) {
+                            revealObserver.observe(el);
+                        }
+                    });
+                });
+            });
+
+            // ---------- 5. FORM HANDLERS ----------
+            function handleFormSubmit(formId, feedbackId, successMessage) {
+                const form = document.getElementById(formId);
+                const feedback = document.getElementById(feedbackId);
+
+                if (!form) return;
+
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    // Check all required fields
+                    const required = form.querySelectorAll('[required]');
+                    let valid = true;
+
+                    required.forEach(function(field) {
+                        if (!field.value.trim()) {
+                            valid = false;
+                            field.style.borderColor = '#b91c1c';
+                        } else {
+                            field.style.borderColor = '';
+                        }
+                    });
+
+                    if (!valid) {
+                        feedback.className = 'form-feedback error';
+                        feedback.textContent = 'Please fill in all required fields.';
+                        return;
+                    }
+
+                    // Simulate submission success
+                    feedback.className = 'form-feedback success';
+                    feedback.textContent = successMessage || '✓ Your application has been submitted successfully. We\'ll be in touch soon.';
+                    form.reset();
+
+                    // Clear success after 8 seconds
+                    setTimeout(function() {
+                        feedback.textContent = '';
+                        feedback.className = 'form-feedback';
+                    }, 8000);
+                });
+            }
+
+            // Initialize all forms
+            handleFormSubmit('scholarshipForm', 's_feedback', '✓ Your scholarship application has been submitted. We\'ll review and get back to you within 5 working days.');
+            handleFormSubmit('clubForm', 'c_feedback', '✓ Your club registration has been received. Our sports team will contact you to finalize the process.');
+            handleFormSubmit('partnerForm', 'p_feedback', '✓ Thank you for your partnership interest. Our partnerships team will reach out to discuss next steps.');
+            handleFormSubmit('volunteerForm', 'v_feedback', '✓ Thank you for your willingness to volunteer! We\'ll connect you with the relevant program team shortly.');
+
+            // Reset field border on focus
+            document.querySelectorAll('.form-group input, .form-group textarea, .form-group select').forEach(function(el) {
+                el.addEventListener('focus', function() {
+                    this.style.borderColor = '';
+                });
+            });
+
+        });
+    </script>
+
+</body>
+</html>

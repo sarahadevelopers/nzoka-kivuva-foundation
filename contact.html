@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Nzoka Kivuva Foundation</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome 6 (Free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <style>
+        /* ============================================================
+               ROOT DESIGN SYSTEM
+               ============================================================ */
+        :root {
+            --color-primary-dark: #064e3b;
+            --color-primary-base: #0b6623;
+            --color-accent-gold: #f59e0b;
+            --color-accent-blue: #2563eb;
+            --color-white: #ffffff;
+            --color-off-white: #f8fafc;
+            --color-slate-light: #e2e8f0;
+            --text-primary-dark: #0f172a;
+            --text-secondary-muted: #475569;
+            --text-disabled: #94a3b8;
+            --border-radius-pill: 50px;
+            --border-radius-card: 16px;
+            --border-radius-sm: 8px;
+            --transition-premium: cubic-bezier(0.4, 0, 0.2, 1);
+            --fs-h1: 34px;
+            --fs-h2: 28px;
+            --fs-h3: 24px;
+            --fs-h4: 22px;
+            --fs-h5: 18px;
+            --fs-body: 14px;
+            --fs-small: 12px;
+        }
+
+        /* ============================================================
+               RESET & BASE
+               ============================================================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-size: var(--fs-body);
+            color: var(--text-primary-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background: var(--color-white);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .section-padding {
+            padding: 96px 0;
+        }
+
+        .section-padding-sm {
+            padding: 64px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* ============================================================
+               TYPOGRAPHY
+               ============================================================ */
+        h1 {
+            font-size: var(--fs-h1);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--text-primary-dark);
+        }
+
+        h2 {
+            font-size: var(--fs-h2);
+            font-weight: 700;
+            line-height: 1.25;
+            letter-spacing: -0.015em;
+            color: var(--text-primary-dark);
+        }
+
+        h3 {
+            font-size: var(--fs-h3);
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-primary-dark);
+        }
+
+        h4 {
+            font-size: var(--fs-h4);
+            font-weight: 600;
+            line-height: 1.35;
+            color: var(--text-primary-dark);
+        }
+
+        p {
+            font-size: var(--fs-body);
+            color: var(--text-secondary-muted);
+            line-height: 1.7;
+        }
+
+        .text-small {
+            font-size: var(--fs-small);
+            letter-spacing: 0.04em;
+            color: var(--text-disabled);
+        }
+
+        .text-uppercase {
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .tag {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--color-accent-blue);
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .tag-green {
+            color: var(--color-primary-base);
+        }
+
+        /* ============================================================
+               BUTTONS
+               ============================================================ */
+        .btn-cta {
+            display: inline-block;
+            background: var(--color-accent-gold);
+            color: var(--color-white);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.9rem 2.4rem;
+            border-radius: var(--border-radius-pill);
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s var(--transition-premium), box-shadow 0.3s var(--transition-premium);
+            text-align: center;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(245, 158, 11, 0.25);
+        }
+
+        .btn-primary-pill {
+            display: inline-block;
+            background: var(--color-primary-dark);
+            color: var(--color-white);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.9rem 2.6rem;
+            border-radius: var(--border-radius-pill);
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s var(--transition-premium), transform 0.3s var(--transition-premium);
+            text-align: center;
+        }
+
+        .btn-primary-pill:hover {
+            background: var(--color-primary-base);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(6, 78, 59, 0.2);
+        }
+
+        .btn-outline-dark {
+            display: inline-block;
+            background: transparent;
+            color: var(--text-primary-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.9rem 2.6rem;
+            border-radius: var(--border-radius-pill);
+            border: 2px solid var(--color-slate-light);
+            cursor: pointer;
+            transition: all 0.3s var(--transition-premium);
+            text-align: center;
+        }
+
+        .btn-outline-dark:hover {
+            border-color: var(--color-primary-dark);
+            background: var(--color-off-white);
+            transform: translateY(-3px);
+        }
+
+        /* ============================================================
+               NAVBAR
+               ============================================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.4s var(--transition-premium), box-shadow 0.4s var(--transition-premium);
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .navbar .logo img {
+            height: 38px;
+            width: auto;
+            transition: filter 0.3s var(--transition-premium);
+            filter: brightness(0) invert(1);
+        }
+
+        .navbar.scrolled .logo img {
+            filter: brightness(0) invert(0);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8);
+            transition: color 0.3s var(--transition-premium);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent-gold);
+            transition: width 0.3s var(--transition-premium);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-white);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .navbar.scrolled .nav-links a {
+            color: var(--text-secondary-muted);
+        }
+
+        .navbar.scrolled .nav-links a:hover {
+            color: var(--text-primary-dark);
+        }
+
+        .navbar.scrolled .nav-links a::after {
+            background: var(--color-primary-dark);
+        }
+
+        .nav-links a.active {
+            color: var(--color-white);
+        }
+
+        .navbar.scrolled .nav-links a.active {
+            color: var(--color-primary-dark);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .navbar.scrolled .nav-links a.active::after {
+            background: var(--color-primary-dark);
+        }
+
+        .nav-cta {
+            background: var(--color-accent-gold);
+            color: var(--color-white) !important;
+            padding: 0.5rem 1.6rem;
+            border-radius: var(--border-radius-pill);
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: transform 0.3s var(--transition-premium), box-shadow 0.3s var(--transition-premium);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
+            color: var(--color-white) !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            padding: 4px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: var(--color-white);
+            border-radius: 4px;
+            transition: all 0.3s var(--transition-premium);
+            transform-origin: center;
+        }
+
+        .navbar.scrolled .hamburger span {
+            background: var(--text-primary-dark);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(6, 78, 59, 0.98);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s var(--transition-premium), visibility 0.4s var(--transition-premium);
+        }
+
+        .mobile-menu.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu a {
+            color: var(--color-white);
+            font-size: 1.6rem;
+            font-weight: 500;
+            transition: opacity 0.3s var(--transition-premium);
+        }
+
+        .mobile-menu a:hover {
+            opacity: 0.7;
+        }
+
+        .mobile-menu .mobile-cta {
+            background: var(--color-accent-gold);
+            color: var(--color-white);
+            padding: 0.8rem 2.4rem;
+            border-radius: var(--border-radius-pill);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* ============================================================
+               CONTACT HERO
+               ============================================================ */
+        .contact-hero {
+            padding: 160px 0 64px;
+            background: var(--color-white);
+        }
+
+        .contact-hero .container {
+            max-width: 1000px;
+        }
+
+        .contact-hero .tag {
+            color: var(--color-primary-base);
+        }
+
+        .contact-hero h1 {
+            font-size: clamp(34px, 5vw, 52px);
+            max-width: 720px;
+            margin-bottom: 12px;
+            letter-spacing: -0.025em;
+        }
+
+        .contact-hero p {
+            max-width: 560px;
+            font-size: 1.05rem;
+            color: var(--text-secondary-muted);
+        }
+
+        /* ============================================================
+               CONTACT GRID
+               ============================================================ */
+        .contact-main {
+            background: var(--color-white);
+            padding-bottom: 96px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* --- Left: Info --- */
+        .contact-info h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .contact-info .intro-text {
+            margin-bottom: 32px;
+            max-width: 400px;
+        }
+
+        .contact-info .detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info .detail-item .icon-wrap {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--color-off-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--color-primary-base);
+            font-size: 16px;
+            transition: background 0.3s var(--transition-premium);
+        }
+
+        .contact-info .detail-item:hover .icon-wrap {
+            background: rgba(11, 102, 35, 0.08);
+        }
+
+        .contact-info .detail-item .text .label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-disabled);
+            display: block;
+            margin-bottom: 1px;
+        }
+
+        .contact-info .detail-item .text .value {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary-dark);
+        }
+
+        .contact-info .detail-item .text .value a {
+            transition: color 0.3s var(--transition-premium);
+        }
+
+        .contact-info .detail-item .text .value a:hover {
+            color: var(--color-primary-base);
+        }
+
+        /* WhatsApp link */
+        .contact-info .whatsapp-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(37, 211, 102, 0.06);
+            color: #25d366;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: var(--border-radius-pill);
+            border: 1px solid rgba(37, 211, 102, 0.15);
+            transition: all 0.3s var(--transition-premium);
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        .contact-info .whatsapp-link:hover {
+            background: rgba(37, 211, 102, 0.12);
+            transform: translateX(4px);
+        }
+
+        .contact-info .whatsapp-link i {
+            font-size: 18px;
+        }
+
+        /* Legal badge in contact */
+        .contact-info .legal-badge {
+            margin-top: 32px;
+            padding: 16px 20px;
+            background: var(--color-off-white);
+            border-radius: var(--border-radius-sm);
+            border: 1px solid var(--color-slate-light);
+            font-size: 13px;
+            color: var(--text-secondary-muted);
+            display: inline-block;
+        }
+
+        .contact-info .legal-badge strong {
+            color: var(--text-primary-dark);
+        }
+
+        /* --- Right: Form --- */
+        .contact-form-wrap {
+            background: var(--color-off-white);
+            border-radius: var(--border-radius-card);
+            padding: 40px 40px 48px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
+        }
+
+        .contact-form-wrap h3 {
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .contact-form-wrap .form-sub {
+            font-size: 14px;
+            color: var(--text-secondary-muted);
+            margin-bottom: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-disabled);
+            margin-bottom: 4px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--color-slate-light);
+            border-radius: var(--border-radius-sm);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            background: var(--color-white);
+            color: var(--text-primary-dark);
+            transition: border-color 0.3s var(--transition-premium), box-shadow 0.3s var(--transition-premium);
+            appearance: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-primary-base);
+            box-shadow: 0 0 0 4px rgba(11, 102, 35, 0.06);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group .btn-cta {
+            width: 100%;
+            justify-content: center;
+            padding: 14px;
+            font-size: 15px;
+        }
+
+        #formFeedback {
+            margin-top: 16px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* ============================================================
+               MAP SECTION
+               ============================================================ */
+        .map-section {
+            background: var(--color-off-white);
+            padding: 64px 0 80px;
+        }
+
+        .map-section .map-label {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .map-section .map-label .tag {
+            color: var(--color-primary-base);
+        }
+
+        .map-section .map-label h2 {
+            margin-bottom: 4px;
+        }
+
+        .map-section .map-label p {
+            max-width: 480px;
+            margin: 0 auto;
+            color: var(--text-secondary-muted);
+        }
+
+        .map-container {
+            border-radius: var(--border-radius-card);
+            overflow: hidden;
+            background: var(--color-slate-light);
+            height: 340px;
+            position: relative;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--color-slate-light);
+        }
+
+        .map-container .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #eef2f3 0%, #dde4e8 100%);
+            color: var(--text-disabled);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .map-container .map-placeholder i {
+            font-size: 48px;
+            margin-bottom: 12px;
+            opacity: 0.3;
+            color: var(--color-primary-dark);
+        }
+
+        .map-container .map-placeholder .map-address {
+            font-size: 13px;
+            color: var(--text-secondary-muted);
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        .map-container .map-pin {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 32px;
+            color: var(--color-accent-gold);
+            filter: drop-shadow(0 4px 8px rgba(245, 158, 11, 0.3));
+            animation: pulse-pin 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-pin {
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.12);
+            }
+        }
+
+        /* ============================================================
+               FOOTER
+               ============================================================ */
+        .footer {
+            background: #0b1a1a;
+            color: rgba(255, 255, 255, 0.75);
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-brand .logo-footer img {
+            height: 36px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            max-width: 340px;
+            line-height: 1.7;
+        }
+
+        .footer-col h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-col address {
+            font-style: normal;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+        }
+
+        .footer-col address i {
+            margin-right: 0.6rem;
+            width: 18px;
+            color: var(--color-accent-gold);
+            opacity: 0.6;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.55);
+            transition: color 0.3s var(--transition-premium);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--color-white);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-top: 2rem;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-bottom .credit a {
+            color: rgba(255, 255, 255, 0.4);
+            transition: color 0.3s var(--transition-premium);
+            font-weight: 500;
+        }
+
+        .footer-bottom .credit a:hover {
+            color: var(--color-white);
+        }
+
+        /* ============================================================
+               REVEAL ANIMATIONS
+               ============================================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.8s var(--transition-premium), transform 0.8s var(--transition-premium);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-d1 {
+            transition-delay: 0.05s;
+        }
+        .reveal-d2 {
+            transition-delay: 0.12s;
+        }
+        .reveal-d3 {
+            transition-delay: 0.20s;
+        }
+        .reveal-d4 {
+            transition-delay: 0.28s;
+        }
+
+        /* ============================================================
+               RESPONSIVE
+               ============================================================ */
+
+        @media (max-width: 1024px) {
+            .contact-grid {
+                gap: 40px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .navbar .logo img {
+                height: 30px;
+            }
+
+            .contact-hero {
+                padding: 120px 0 40px;
+            }
+            .contact-hero h1 {
+                font-size: 30px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-form-wrap {
+                padding: 28px 24px 32px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .contact-info .detail-item .text .value {
+                font-size: 14px;
+            }
+
+            .map-container {
+                height: 240px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            .container {
+                padding: 0 4%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-hero h1 {
+                font-size: 26px;
+            }
+            .contact-form-wrap {
+                padding: 20px 16px 24px;
+            }
+            .map-container {
+                height: 200px;
+            }
+            .contact-info .legal-badge {
+                font-size: 12px;
+                padding: 12px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================================
+    NAVBAR
+    ============================================================ -->
+    <header class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="logo">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 60'%3E%3Crect width='300' height='60' fill='none'/%3E%3Ctext x='0' y='38' font-family='Inter, sans-serif' font-size='20' font-weight='800' fill='white'%3ENZIOKA KIVUVA%3C/text%3E%3Ctext x='172' y='38' font-family='Inter, sans-serif' font-size='14' font-weight='300' fill='rgba(255,255,255,0.7)'%3EFOUNDATION%3C/text%3E%3C/svg%3E" alt="Nzoka Kivuva Foundation Logo" />
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#contact" class="active">Contact</a></li>
+            <li><a href="#contact" class="nav-cta">Partner With Us</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#programs" class="mobile-link">Programs</a>
+        <a href="#contact" class="mobile-cta">Partner With Us</a>
+    </div>
+
+    <!-- ============================================================
+    CONTACT HERO
+    ============================================================ -->
+    <section class="contact-hero" id="contact">
+        <div class="container">
+            <span class="tag reveal">Get in Touch</span>
+            <h1 class="reveal reveal-d1">Let's build something meaningful together.</h1>
+            <p class="reveal reveal-d2">
+                Whether you want to partner with us, volunteer for our next tournament, or learn more about our education scholarships — we're here to listen.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CONTACT MAIN
+    ============================================================ -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Left: Contact Info -->
+                <div class="contact-info reveal">
+                    <h2>Reach out</h2>
+                    <p class="intro-text">
+                        Our team is ready to connect with schools, community groups, county governments, and sports organizations across Kenya.
+                    </p>
+
+                    <div class="detail-item">
+                        <div class="icon-wrap"><i class="fas fa-location-dot"></i></div>
+                        <div class="text">
+                            <span class="label">Head Office</span>
+                            <span class="value">Top Doctors Plaza, 4th Floor<br />Old Namanga Road, Kitengela</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="icon-wrap"><i class="fas fa-phone"></i></div>
+                        <div class="text">
+                            <span class="label">Phone</span>
+                            <span class="value"><a href="tel:+254710599653">+254 710 599 653</a></span>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="icon-wrap"><i class="fas fa-envelope"></i></div>
+                        <div class="text">
+                            <span class="label">Email</span>
+                            <span class="value"><a href="mailto:info@nzokakivuvafoundation.org">info@nzokakivuvafoundation.org</a></span>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/254710599653" target="_blank" rel="noopener" class="whatsapp-link">
+                        <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
+                    </a>
+
+                    <div class="legal-badge">
+                        <i class="fas fa-certificate" style="color:var(--color-primary-base);margin-right:8px;"></i>
+                        Registered Entity: <strong>Nzoka Kivuva Foundation</strong> &nbsp;·&nbsp; No. <strong>CLG-BWTORQPV</strong>
+                    </div>
+                </div>
+
+                <!-- Right: Contact Form -->
+                <div class="contact-form-wrap reveal reveal-d2">
+                    <h3>Send a message</h3>
+                    <p class="form-sub">We'll respond within 24 hours.</p>
+
+                    <form id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" placeholder="Your full name" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="emailAddress">Email Address</label>
+                                <input type="email" id="emailAddress" placeholder="you@example.com" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="partnershipType">I'm interested in</label>
+                            <select id="partnershipType">
+                                <option value="">Select an option</option>
+                                <option value="donor">Becoming a Donor</option>
+                                <option value="volunteer">Volunteering</option>
+                                <option value="corporate">Corporate Partnership</option>
+                                <option value="school">School / Education Partnership</option>
+                                <option value="sports">Sports Organization Collaboration</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Tell us how you'd like to get involved or what you'd like to know..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-cta">Send Message</button>
+                    </form>
+
+                    <div id="formFeedback"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    MAP SECTION
+    ============================================================ -->
+    <section class="map-section" id="map">
+        <div class="container">
+            <div class="map-label reveal">
+                <span class="tag">Find Us</span>
+                <h2>Our location</h2>
+                <p>Visit our head office in Kitengela or connect with our field teams in Makueni County.</p>
+            </div>
+
+            <div class="map-container reveal reveal-d1">
+                <div class="map-placeholder">
+                    <i class="fas fa-map"></i>
+                    <span>Top Doctors Plaza, Kitengela</span>
+                    <span class="map-address">Old Namanga Road, 4th Floor</span>
+                </div>
+                <div class="map-pin">
+                    <i class="fas fa-location-dot"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-grid container">
+            <div class="footer-brand">
+                <div class="logo-footer">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 60'%3E%3Crect width='300' height='60' fill='none'/%3E%3Ctext x='0' y='38' font-family='Inter, sans-serif' font-size='20' font-weight='800' fill='white'%3ENZIOKA KIVUVA%3C/text%3E%3Ctext x='172' y='38' font-family='Inter, sans-serif' font-size='14' font-weight='300' fill='rgba(255,255,255,0.5)'%3EFOUNDATION%3C/text%3E%3C/svg%3E" alt="Nzoka Kivuva Foundation" />
+                </div>
+                <p>A registered foundation dedicated to youth empowerment, sports equity, and community transformation across Kenya.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Our Locations</h4>
+                <address>
+                    <i class="fas fa-building"></i> <strong>Head Office:</strong><br />
+                    Top Doctors Plaza, 4th Floor<br />
+                    Old Namanga Road, Kitengela<br /><br />
+                    <i class="fas fa-map-pin"></i> <strong>Field Hub:</strong><br />
+                    Makueni County, Kenya
+                </address>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#programs">Our Programs</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#map">Find Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="footer-bottom">
+                <span>&copy; 2026 Nzioka Kivuva Foundation. All Rights Reserved.</span>
+                <span class="credit">
+                    Designed &amp; Developed by <a href="https://sarahadevelopers.co.ke/" target="_blank" rel="noopener">Saraha Developers</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // ---------- 1. NAVBAR SCROLL ----------
+            const navbar = document.getElementById('navbar');
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            window.addEventListener('scroll', function() {
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                navbar.classList.toggle('scrolled', currentScroll > 30);
+            });
+
+            // ---------- 2. HAMBURGER ----------
+            hamburger.addEventListener('click', function() {
+                const isOpen = mobileMenu.classList.toggle('open');
+                hamburger.classList.toggle('active');
+                hamburger.setAttribute('aria-expanded', isOpen);
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+            });
+
+            document.querySelectorAll('.mobile-link, .mobile-cta').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('open');
+                    hamburger.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                    mobileMenu.classList.remove('open');
+                    hamburger.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // ---------- 3. SCROLL REVEAL ----------
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.10,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            revealElements.forEach(function(el) {
+                revealObserver.observe(el);
+            });
+
+            // ---------- 4. CONTACT FORM ----------
+            const contactForm = document.getElementById('contactForm');
+            const formFeedback = document.getElementById('formFeedback');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const name = document.getElementById('fullName').value.trim();
+                    const email = document.getElementById('emailAddress').value.trim();
+                    const message = document.getElementById('message').value.trim();
+
+                    if (!name || !email || !message) {
+                        formFeedback.innerHTML =
+                            '<span style="color:#b91c1c;font-weight:500;">Please fill in all required fields.</span>';
+                        return;
+                    }
+
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        formFeedback.innerHTML =
+                            '<span style="color:#b91c1c;font-weight:500;">Please enter a valid email address.</span>';
+                        return;
+                    }
+
+                    formFeedback.innerHTML =
+                        '<span style="color:#0b6623;font-weight:500;">✓ Thank you! Your message has been sent. We\'ll get back to you soon.</span>';
+                    contactForm.reset();
+
+                    setTimeout(function() {
+                        formFeedback.innerHTML = '';
+                    }, 6000);
+                });
+            }
+
+        });
+    </script>
+
+</body>
+</html>
