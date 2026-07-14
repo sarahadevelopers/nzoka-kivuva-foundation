@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request Invoice | Nzoka Kivuva Foundation</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="nzoka-kivuva-favicon.webp" />
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="invoice-request.css" />
+
+    <style>
+        /* ============================================================
+           INVOICE REQUEST PAGE SPECIFIC STYLES
+           ============================================================ */
+
+        .invoice-hero {
+            background: var(--color-white);
+            padding: 160px 0 56px;
+        }
+
+        .invoice-hero .container {
+            max-width: 1000px;
+        }
+
+        .invoice-hero .tag {
+            color: var(--color-primary-base);
+        }
+
+        .invoice-hero h1 {
+            font-size: clamp(34px, 5vw, 48px);
+            max-width: 720px;
+            margin-bottom: 12px;
+            letter-spacing: -0.025em;
+        }
+
+        .invoice-hero p {
+            max-width: 560px;
+            font-size: 1.05rem;
+            color: var(--text-secondary-muted);
+        }
+
+        /* ============================================================
+           INVOICE FORM
+           ============================================================ */
+        .invoice-form-section {
+            background: var(--color-white);
+            padding: 0 0 96px;
+        }
+
+        .invoice-form-wrapper {
+            max-width: 680px;
+            margin: 0 auto;
+            background: var(--color-off-white);
+            border-radius: var(--border-radius-card);
+            padding: 48px 52px 56px;
+            border: 1px solid var(--color-slate-light);
+        }
+
+        .invoice-form-wrapper .form-header {
+            margin-bottom: 32px;
+        }
+
+        .invoice-form-wrapper .form-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary-dark);
+            margin-bottom: 4px;
+        }
+
+        .invoice-form-wrapper .form-header p {
+            font-size: 14px;
+            color: var(--text-secondary-muted);
+        }
+
+        .invoice-form-wrapper .form-header p strong {
+            color: var(--text-primary-dark);
+        }
+
+        .invoice-form-wrapper .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .invoice-form-wrapper .form-group {
+            margin-bottom: 18px;
+        }
+
+        .invoice-form-wrapper .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-disabled);
+            margin-bottom: 4px;
+        }
+
+        .invoice-form-wrapper .form-group label .required {
+            color: #b91c1c;
+            margin-left: 2px;
+        }
+
+        .invoice-form-wrapper .form-group input,
+        .invoice-form-wrapper .form-group textarea,
+        .invoice-form-wrapper .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--color-slate-light);
+            border-radius: var(--border-radius-sm);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            background: var(--color-white);
+            color: var(--text-primary-dark);
+            transition: all 0.3s var(--transition-premium);
+            appearance: none;
+        }
+
+        .invoice-form-wrapper .form-group input:focus,
+        .invoice-form-wrapper .form-group textarea:focus,
+        .invoice-form-wrapper .form-group select:focus {
+            outline: none;
+            border-color: var(--color-primary-base);
+            box-shadow: 0 0 0 4px rgba(11, 102, 35, 0.06);
+        }
+
+        .invoice-form-wrapper .form-group select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+
+        .invoice-form-wrapper .form-group textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        /* Submit Button */
+        .invoice-form-wrapper .btn-submit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 16px 32px;
+            background: var(--color-primary-dark);
+            color: var(--color-white);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: var(--border-radius-pill);
+            cursor: pointer;
+            transition: all 0.3s var(--transition-premium);
+        }
+
+        .invoice-form-wrapper .btn-submit:hover {
+            background: var(--color-primary-base);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(6, 78, 59, 0.25);
+        }
+
+        .invoice-form-wrapper .btn-submit:active {
+            transform: scale(0.98);
+        }
+
+        .invoice-form-wrapper .btn-submit i {
+            transition: transform 0.3s var(--transition-premium);
+        }
+
+        .invoice-form-wrapper .btn-submit:hover i {
+            transform: translateX(4px);
+        }
+
+        .invoice-form-wrapper .form-feedback {
+            margin-top: 16px;
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .invoice-form-wrapper .form-feedback.success {
+            color: var(--color-primary-base);
+        }
+
+        .invoice-form-wrapper .form-feedback.error {
+            color: #b91c1c;
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 768px) {
+            .invoice-hero {
+                padding: 120px 0 32px;
+            }
+
+            .invoice-hero h1 {
+                font-size: 30px;
+            }
+
+            .invoice-form-wrapper {
+                padding: 28px 20px 32px;
+            }
+
+            .invoice-form-wrapper .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .invoice-form-wrapper .form-header h2 {
+                font-size: 20px;
+            }
+
+            .invoice-form-wrapper .btn-submit {
+                padding: 14px 24px;
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .invoice-hero h1 {
+                font-size: 26px;
+            }
+
+            .invoice-form-wrapper {
+                padding: 20px 16px 24px;
+            }
+
+            .invoice-form-wrapper .btn-submit {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================================
+    NAVBAR
+    ============================================================ -->
+    <header class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="logo">
+            <img src="nzoka-kivuva-favicon.webp" alt="Nzoka Kivuva Foundation Logo" height="80" />
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="get-involved.html">Get Involved</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="about.html" class="mobile-link">About Us</a>
+        <a href="programs.html" class="mobile-link">Programs</a>
+        <a href="gallery.html" class="mobile-link">Gallery</a>
+        <a href="contact.html" class="mobile-link">Contact</a>
+        <a href="get-involved.html" class="mobile-link">Get Involved</a>
+    </div>
+
+    <!-- ============================================================
+    INVOICE REQUEST HERO
+    ============================================================ -->
+    <section class="invoice-hero" id="invoice">
+        <div class="container">
+            <span class="tag reveal">Invoice Request</span>
+            <h1 class="reveal reveal-d1">Request Your Donation Receipt</h1>
+            <p class="reveal reveal-d2">
+                Please fill in the details below to receive a formal invoice for your donation. 
+                This serves as your official receipt for tax and accounting purposes.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    INVOICE REQUEST FORM
+    ============================================================ -->
+    <section class="invoice-form-section" id="invoice-form">
+        <div class="container">
+            <div class="invoice-form-wrapper reveal">
+                <div class="form-header">
+                    <h2>Invoice Request Form</h2>
+                    <p>
+                        All fields marked with <strong style="color:#b91c1c;">*</strong> are required. 
+                        We'll process your request within 2–3 business days.
+                    </p>
+                </div>
+
+                <form id="invoiceForm" 
+                      action="https://formsubmit.co/info@nzokakivuvafoundation.org" 
+                      method="POST" novalidate>
+
+                    <!-- FormSubmit Hidden Fields -->
+                    <input type="hidden" name="_subject" value="New Invoice Request" />
+                    <input type="hidden" name="_captcha" value="true" />
+                    <input type="hidden" name="_template" value="table" />
+                    <input type="hidden" name="_next" value="https://nzokakivuvafoundation.org/thank-you.html" />
+
+                    <!-- Donor Full Name -->
+                    <div class="form-group">
+                        <label for="donor_name">Donor's Full Name <span class="required">*</span></label>
+                        <input type="text" id="donor_name" name="Donor Name" placeholder="e.g., John Mwangi" required />
+                    </div>
+
+                    <!-- Email & Phone -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="donor_email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="donor_email" name="Email" placeholder="you@example.com" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="donor_phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="donor_phone" name="Phone" placeholder="+254 7XX XXX XXX" required />
+                        </div>
+                    </div>
+
+                    <!-- Donation Amount & Date -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="donation_amount">Donation Amount (KSh) <span class="required">*</span></label>
+                            <input type="number" id="donation_amount" name="Donation Amount (KSh)" placeholder="e.g., 2500" min="1" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="donation_date">Date of Donation <span class="required">*</span></label>
+                            <input type="date" id="donation_date" name="Date of Donation" required />
+                        </div>
+                    </div>
+
+                    <!-- Payment Method -->
+                    <div class="form-group">
+                        <label for="payment_method">Payment Method <span class="required">*</span></label>
+                        <select id="payment_method" name="Payment Method" required>
+                            <option value="">Select payment method</option>
+                            <option value="M-Pesa Paybill">M-Pesa Paybill</option>
+                            <option value="Bank Transfer">Bank Transfer</option>
+                            <option value="Cash">Cash</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- M-Pesa/Bank Reference (conditional) -->
+                    <div class="form-group" id="referenceGroup">
+                        <label for="reference">Transaction Reference / Confirmation Code</label>
+                        <input type="text" id="reference" name="Transaction Reference" placeholder="e.g., M-Pesa confirmation code or bank reference" />
+                        <small style="display:block; margin-top:4px; font-size:12px; color:var(--text-disabled);">
+                            Optional – helps us trace your donation
+                        </small>
+                    </div>
+
+                    <!-- Additional Notes -->
+                    <div class="form-group">
+                        <label for="notes">Additional Notes</label>
+                        <textarea id="notes" name="Notes" placeholder="Any special requests or additional information..." rows="3"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-submit">
+                        Request Invoice <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                    <div class="form-feedback" id="invoiceFeedback"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- Column 1: Brand + Mission -->
+                <div class="footer-brand">
+                    <div class="logo-footer">
+                        <img src="nzoka-kivuva-favicon.webp" alt="Nzoka Kivuva Foundation" />
+                        <span>NZIOKA KIVUVA <span style="color: #f59e0b;">FOUNDATION</span></span>
+                    </div>
+                    <p>
+                        A registered foundation dedicated to youth empowerment, sports equity,
+                        and community transformation across Kenya.
+                    </p>
+                    <div class="footer-legal-badge">
+                        <i class="fas fa-certificate"></i>
+                        Registered Entity No. <strong>CLG-BWTORQPV</strong>
+                    </div>
+                </div>
+
+                <!-- Column 2: Contact & Location -->
+                <div class="footer-col">
+                    <h4>Get in Touch</h4>
+                    <address>
+                        <span class="contact-line">
+                            <i class="fas fa-location-dot"></i>
+                            <a href="https://maps.app.goo.gl/D8fQ3Zjnwii13CqV7" target="_blank" rel="noopener">
+                                Top Doctors Plaza, 4th Floor<br />
+                                <span class="sub-text">Old Namanga Road, Kitengela</span>
+                            </a>
+                        </span>
+                        <span class="contact-line">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+254710599653">+254 710 599 653</a>
+                        </span>
+                        <span class="contact-line">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@nzokakivuvafoundation.org">info@nzokakivuvafoundation.org</a>
+                        </span>
+                    </address>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Our Programs</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="get-involved.html">Get Involved</a></li>
+                        <li><a href="legal.html">Legal &amp; Transparency</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter Subscription -->
+                <div class="footer-col footer-social">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <p class="newsletter-text">
+                        Stay updated on tournaments, scholarships, and community events across Makueni County.
+                    </p>
+
+                    <form class="newsletter-form" id="newsletterForm" action="https://formsubmit.co/info@nzokakivuvafoundation.org" method="POST">
+                        <input type="hidden" name="_captcha" value="true" />
+                        <input type="hidden" name="_template" value="table" />
+                        <input type="hidden" name="_next" value="https://nzokakivuvafoundation.org/thank-you.html" />
+                        <input type="hidden" name="_subject" value="New Newsletter Subscription" />
+
+                        <div class="newsletter-input-group">
+                            <input 
+                                type="email" 
+                                id="newsletterEmail" 
+                                name="email" 
+                                placeholder="Enter your email address" 
+                                required 
+                                aria-label="Email address"
+                            />
+                            <button type="submit" class="newsletter-btn" id="newsletterSubmit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+
+                        <div class="newsletter-feedback" id="newsletterFeedback"></div>
+                    </form>
+
+                    <div class="social-icons">
+                        <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener" aria-label="Twitter/X">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.me/254710599653" target="_blank" rel="noopener" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <span>&copy; 2026 Nzioka Kivuva Foundation. All Rights Reserved.</span>
+                <span class="credit">
+                    Designed &amp; Developed by <a href="https://sarahadevelopers.co.ke/" target="_blank" rel="noopener">Saraha Developers Ltd</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-float-wrapper">
+        <a href="https://wa.me/254710599653?text=Hello%20Nzoka%20Kivuva%20Foundation%2C%20I%27d%20like%20to%20request%20an%20invoice." 
+           class="whatsapp-float" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           aria-label="Chat with us on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-label">Chat with us</span>
+        </a>
+    </div>
+
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
+    <script src="invoice-request.js"></script>
+
+</body>
+</html>
