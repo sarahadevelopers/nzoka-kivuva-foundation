@@ -155,43 +155,69 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ---------- 6. CONTACT FORM (basic validation + feedback) ----------
-    const contactForm = document.getElementById('contactForm');
-    const formFeedback = document.getElementById('formFeedback');
+   // ---------- 6. CONTACT FORM (AJAX) ----------
+const contactForm = document.getElementById('contactForm');
+const formFeedback = document.getElementById('formFeedback');
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
 
-            const name = document.getElementById('fullName').value.trim();
-            const email = document.getElementById('emailAddress').value.trim();
-            const message = document.getElementById('message').value.trim();
+        const name = document.getElementById('fullName').value.trim();
+        const email = document.getElementById('emailAddress').value.trim();
+        const message = document.getElementById('message').value.trim();
 
-            if (!name || !email || !message) {
-                formFeedback.innerHTML =
-                    '<span style="color:#b91c1c;font-weight:500;">Please fill in all required fields.</span>';
-                return;
-            }
+        // Clear previous feedback
+        formFeedback.innerHTML = '';
 
-            // Simple email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                formFeedback.innerHTML =
-                    '<span style="color:#b91c1c;font-weight:500;">Please enter a valid email address.</span>';
-                return;
-            }
-
-            // Success simulation
+        // Validation
+        if (!name || !email || !message) {
             formFeedback.innerHTML =
-                '<span style="color:#0b6623;font-weight:500;">✓ Thank you! Your message has been sent. We\'ll get back to you soon.</span>';
-            contactForm.reset();
+                '<span style="color:#b91c1c;font-weight:500;">Please fill in all required fields.</span>';
+            return;
+        }
 
-            // Clear success after 6 seconds
-            setTimeout(function() {
-                formFeedback.innerHTML = '';
-            }, 6000);
-        });
-    }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            formFeedback.innerHTML =
+                '<span style="color:#b91c1c;font-weight:500;">Please enter a valid email address.</span>';
+            return;
+        }
 
+        // Show sending state
+        formFeedback.innerHTML = '<span style="color:#475569;">Sending message...</span>';
+
+        try {
+            const formData = new FormData(this);
+
+            const response = await fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                formFeedback.innerHTML =
+                    '<span style="color:#0b6623;font-weight:500;">✓ Thank you! Your message has been sent. We\'ll get back to you soon.</span>';
+                contactForm.reset();
+            } else {
+                formFeedback.innerHTML =
+                    '<span style="color:#b91c1c;font-weight:500;">Something went wrong. Please try again.</span>';
+            }
+        } catch (error) {
+            formFeedback.innerHTML =
+                '<span style="color:#b91c1c;font-weight:500;">Server error. Please try again later.</span>';
+            console.error('Form error:', error);
+        }
+
+        // Clear success/error after 8 seconds
+        setTimeout(function() {
+            formFeedback.innerHTML = '';
+        }, 8000);
+    });
+}
     // ---------- 7. NEWSLETTER SUBSCRIPTION (FormSubmit - AJAX) ----------
     const newsletterForm = document.getElementById('newsletterForm');
     const newsletterEmail = document.getElementById('newsletterEmail');
@@ -268,32 +294,33 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ---------- 8. PILLARS TABS (Tabbed Hero Image Sections) ----------
-    const tabs = document.querySelectorAll('.pillar-tab');
-    const panels = {
-        youthempowerment: document.getElementById('panel-youthempowerment'),
-        education: document.getElementById('panel-education'),
-        leadership: document.getElementById('panel-leadership'),
-        community: document.getElementById('panel-community')
-    };
+   // ---------- 8. PILLARS TABS (Tabbed Hero Image Sections) ----------
+const tabs = document.querySelectorAll('.pillar-tab');
+const panels = {
+    health: document.getElementById('panel-health'),
+    education: document.getElementById('panel-education'),
+    leadership: document.getElementById('panel-leadership'),
+    community: document.getElementById('panel-community')
+};
 
-    tabs.forEach(function(tab) {
-        tab.addEventListener('click', function() {
-            // Update active tab
-            tabs.forEach(function(t) { t.classList.remove('active'); });
-            tab.classList.add('active');
+tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+        // Update active tab
+        tabs.forEach(function(t) { t.classList.remove('active'); });
+        tab.classList.add('active');
 
-            // Hide all panels
-            Object.values(panels).forEach(function(p) {
-                if (p) p.classList.remove('active');
-            });
-
-            // Show the selected panel
-            const tabId = tab.getAttribute('data-tab');
-            if (panels[tabId]) {
-                panels[tabId].classList.add('active');
-            }
+        // Hide all panels
+        Object.values(panels).forEach(function(p) {
+            if (p) p.classList.remove('active');
         });
+
+        // Show the selected panel
+        const tabId = tab.getAttribute('data-tab');
+        if (panels[tabId]) {
+            panels[tabId].classList.add('active');
+        }
     });
+});
 // ---------- 8. TESTIMONIALS AUTOSLIDER ----------
 const testimonialsTrack = document.getElementById('testimonialsTrack');
 const testimonialPrev = document.getElementById('testimonialPrev');
