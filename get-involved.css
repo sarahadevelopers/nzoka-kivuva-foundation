@@ -778,7 +778,7 @@
    GET INVOLVED HERO (Background Image)
    ============================================================ */
 .involved-hero-bg {
-    min-height: 70vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     background: 
@@ -806,7 +806,7 @@
 .involved-hero-bg .involved-hero-content .tag {
     color: var(--color-accent-gold);
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     display: block;
@@ -814,8 +814,8 @@
 }
 
 .involved-hero-bg .involved-hero-content h1 {
-    font-size: clamp(40px, 5.5vw, 60px);
-    font-weight: 800;
+    font-size: clamp(40px, 5.5vw, 50px);
+    font-weight: 500;
     line-height: 1.05;
     letter-spacing: -0.03em;
     color: var(--color-white);

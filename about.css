@@ -1137,12 +1137,12 @@
    ABOUT HERO – Background Image
    ============================================================ */
 .about-hero {
-    min-height: 70vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     background: 
         linear-gradient(135deg, rgba(6, 78, 59, 0.75) 0%, rgba(15, 23, 42, 0.65) 100%),
-        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR67ZE_HE8xKLjonmRXpkDGcoRrDN5TMFN5bbZZoxJBJIFKAxm8uhYQbvo&s=10') center/cover no-repeat;
+        url('nzoka13.webp') center/cover no-repeat;
     background-blend-mode: overlay;
     padding: 140px 5% 80px;
     position: relative;
@@ -1185,8 +1185,8 @@
 }
 
 .about-hero-content h1 {
-    font-size: clamp(40px, 5.5vw, 64px);
-    font-weight: 800;
+    font-size: clamp(40px, 4.5vw, 44px);
+    font-weight: 500;
     line-height: 1.05;
     letter-spacing: -0.03em;
     color: var(--color-white);

@@ -899,7 +899,7 @@
    OPTION 2: Minimalist with Background Image
    ============================================================ */
 .programs-hero-bg {
-    min-height: 70vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     background: 
@@ -969,8 +969,8 @@
 }
 
 .programs-hero-ultra h1 {
-    font-size: clamp(44px, 6vw, 68px);
-    font-weight: 800;
+    font-size: clamp(44px, 4vw, 48px);
+    font-weight: 500;
     line-height: 1.05;
     letter-spacing: -0.03em;
     color: var(--text-primary-dark);
