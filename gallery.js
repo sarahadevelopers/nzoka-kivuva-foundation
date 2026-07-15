@@ -55,40 +55,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // ---------- 4. GALLERY DATA ----------
             const galleryItems = [{
-                src: 'https://picsum.photos/seed/football1/600/400',
+                src: 'WhatsApp Image 2026-07-14 at 1.27.47 PM.jpeg',
                 caption: 'Under-17 League Finals, Wote, Makueni'
             }, {
-                src: 'https://picsum.photos/seed/scholarship1/600/500',
+                src: 'WhatsApp Image 2026-07-14 at 1.27.50 PM.jpeg',
                 caption: 'Scholarship Award Ceremony, Kitengela'
             }, {
-                src: 'https://picsum.photos/seed/community1/600/350',
+                src: 'WhatsApp Image 2026-07-14 at 1.27.56 PM.jpeg',
                 caption: 'Community Football Training, Kibwezi'
             }, {
-                src: 'https://picsum.photos/seed/mentorship1/600/480',
+                src: 'WhatsApp Image 2026-07-14 at 1.27.57 PM.jpeg',
                 caption: 'Mentorship & Life Skills Session, Makindu'
             }, {
-                src: 'https://picsum.photos/seed/tournament1/600/420',
+                src: 'WhatsApp Image 2026-07-14 at 1.29.30 PM.jpeg',
                 caption: 'Makueni County Inter-Schools Gala, Wote'
             }, {
-                src: 'https://picsum.photos/seed/health1/600/380',
+                src: 'WhatsApp Image 2026-07-14 at 1.29.43 PM.jpeg',
                 caption: 'Health & Wellness Outreach, Kibwezi'
             }, {
-                src: 'https://picsum.photos/seed/coaching1/600/520',
+                src: 'WhatsApp Image 2026-07-14 at 1.29.45 PM (1).jpeg',
                 caption: 'Coaches Training & Certification, Makindu'
             }, {
-                src: 'https://picsum.photos/seed/unity1/600/360',
+                src: 'WhatsApp Image 2026-07-14 at 1.29.47 PM (1).jpeg',
                 caption: 'Unity Tournament – Bridging Social Divides, Makueni'
             }, {
-                src: 'https://picsum.photos/seed/vocational1/600/450',
+                src: 'WhatsApp Image 2026-07-14 at 1.31.24 PM (2).jpeg',
                 caption: 'Vocational Training & Skills Development, Kitengela'
             }, {
-                src: 'https://picsum.photos/seed/youth1/600/400',
+                src: 'WhatsApp Image 2026-07-14 at 1.31.32 PM (1).jpeg',
                 caption: 'Youth Leadership Camp, Wote'
             }, {
-                src: 'https://picsum.photos/seed/girls1/600/490',
+                src: 'WhatsApp Image 2026-07-14 at 1.31.33 PM.jpeg',
                 caption: 'Girls’ Football & Gender Equality Program, Kibwezi'
             }, {
-                src: 'https://picsum.photos/seed/celebration1/600/340',
+                src: 'WhatsApp Image 2026-07-14 at 1.31.35 PM.jpeg',
                 caption: 'Tournament Victory Celebration, Makindu'
             }];
 

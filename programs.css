@@ -904,7 +904,7 @@
     align-items: center;
     background: 
         linear-gradient(135deg, rgba(6, 78, 59, 0.78) 0%, rgba(15, 23, 42, 0.68) 100%),
-        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy_OxBCPzzjNcuoKDFTH3qCluB8A3WKHHJhXAro0B00v1nGUbowGO7N0sW&s=10') center/cover no-repeat;
+        url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWZyaWNhbiUyMG5nbydzfGVufDB8fDB8fHww') center/cover no-repeat;
     background-blend-mode: overlay;
     padding: 140px 5% 80px;
     position: relative;
