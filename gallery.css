@@ -181,33 +181,62 @@
       
 
         /* ============================================================
-               GALLERY HERO
-               ============================================================ */
-        .gallery-hero {
-            padding: 160px 0 48px;
-            background: var(--color-white);
-        }
+   GALLERY HERO (Background Image – Premium)
+   ============================================================ */
+.gallery-hero-bg {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    background: 
+        linear-gradient(135deg, rgba(6, 78, 59, 0.78) 0%, rgba(15, 23, 42, 0.68) 100%),
+        url('https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=1600&q=80') center/cover no-repeat;
+    background-blend-mode: overlay;
+    padding: 140px 5% 80px;
+    position: relative;
+}
 
-        .gallery-hero .container {
-            max-width: 1000px;
-        }
+/* Subtle animated texture overlay for premium feel */
+.gallery-hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 20%, rgba(245, 158, 11, 0.06) 0%, transparent 60%);
+    pointer-events: none;
+}
 
-        .gallery-hero .tag {
-            color: var(--color-primary-base);
-        }
+.gallery-hero-bg .gallery-hero-content {
+    max-width: 720px;
+    position: relative;
+    z-index: 2;
+}
 
-        .gallery-hero h1 {
-            font-size: clamp(34px, 5vw, 52px);
-            max-width: 720px;
-            margin-bottom: 12px;
-            letter-spacing: -0.025em;
-        }
+.gallery-hero-bg .gallery-hero-content .tag {
+    color: var(--color-accent-gold);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 12px;
+}
 
-        .gallery-hero p {
-            max-width: 560px;
-            font-size: 1.05rem;
-            color: var(--text-secondary-muted);
-        }
+.gallery-hero-bg .gallery-hero-content h1 {
+    font-size: clamp(40px, 5.5vw, 60px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--color-white);
+    margin-bottom: 12px;
+}
+
+.gallery-hero-bg .gallery-hero-content p {
+    font-size: clamp(1rem, 1.1vw, 1.15rem);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    max-width: 480px;
+}
+
+
 
         /* ============================================================
                MASONRY GALLERY
@@ -531,3 +560,358 @@
                 font-size: 10px;
             }
         }
+        /* ============================================================
+   GALLERY HERO (Optimized)
+   ============================================================ */
+.gallery-hero {
+    padding: 160px 0 56px;
+    background: var(--color-white);
+}
+
+.gallery-hero .container {
+    max-width: 1000px;
+}
+
+.gallery-hero .tag {
+    color: var(--color-primary-base);
+}
+
+.gallery-hero h1 {
+    font-size: clamp(34px, 5vw, 52px);
+    max-width: 720px;
+    margin-bottom: 12px;
+    letter-spacing: -0.025em;
+}
+
+.gallery-hero p {
+    max-width: 600px;
+    font-size: 1.05rem;
+    color: var(--text-secondary-muted);
+}
+
+/* ============================================================
+   GALLERY INTRO
+   ============================================================ */
+.gallery-intro {
+    background: var(--color-off-white);
+}
+
+.gallery-intro-content {
+    max-width: 740px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gallery-intro-content .tag {
+    color: var(--color-primary-base);
+}
+
+.gallery-intro-content h2 {
+    font-size: clamp(28px, 3.5vw, 36px);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 12px;
+    color: var(--text-primary-dark);
+}
+
+.gallery-intro-content p {
+    font-size: 1rem;
+    color: var(--text-secondary-muted);
+    line-height: 1.7;
+}
+
+/* ============================================================
+   GALLERY FILTER
+   ============================================================ */
+.gallery-filter {
+    background: var(--color-white);
+    padding: 32px 0;
+    border-bottom: 1px solid var(--color-slate-light);
+}
+
+.filter-scroll {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    border: 1px solid var(--color-slate-light);
+    border-radius: var(--border-radius-pill);
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary-muted);
+    cursor: pointer;
+    transition: all 0.3s var(--transition-premium);
+}
+
+.filter-btn:hover {
+    border-color: var(--color-primary-base);
+    color: var(--text-primary-dark);
+}
+
+.filter-btn.active {
+    background: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    color: var(--color-white);
+}
+
+/* ============================================================
+   MASONRY GALLERY
+   ============================================================ */
+.gallery-masonry {
+    background: var(--color-white);
+}
+
+.masonry-grid {
+    column-count: 3;
+    column-gap: 24px;
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 24px;
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.4s var(--transition-premium), box-shadow 0.4s var(--transition-premium);
+    background: var(--color-off-white);
+}
+
+.masonry-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+}
+
+.masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s var(--transition-premium);
+    background: var(--color-slate-light);
+}
+
+.masonry-item:hover img {
+    transform: scale(1.02);
+}
+
+.masonry-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 20px 16px;
+    background: linear-gradient(0deg, rgba(6, 78, 59, 0.6) 0%, transparent 100%);
+    color: var(--color-white);
+    opacity: 0;
+    transition: opacity 0.4s var(--transition-premium);
+    pointer-events: none;
+}
+
+.masonry-item:hover .overlay {
+    opacity: 1;
+}
+
+.masonry-item .overlay .caption {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.masonry-item .overlay .caption i {
+    margin-right: 6px;
+    opacity: 0.7;
+}
+
+/* ============================================================
+   IMPACT STATS
+   ============================================================ */
+.impact-stats {
+    background: var(--color-off-white);
+}
+
+.impact-stats .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+.impact-stats .stat-item .stat-number {
+    font-size: clamp(36px, 4vw, 48px);
+    font-weight: 800;
+    color: var(--color-primary-dark);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.impact-stats .stat-item .stat-label {
+    font-size: var(--fs-small);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary-muted);
+    margin-top: 0.4rem;
+    font-weight: 600;
+}
+
+/* ============================================================
+   GALLERY CTA
+   ============================================================ */
+.gallery-cta {
+    background: var(--color-white);
+    text-align: center;
+}
+
+.gallery-cta h2 {
+    font-size: clamp(28px, 3.5vw, 36px);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 12px;
+    color: var(--text-primary-dark);
+}
+
+.gallery-cta p {
+    font-size: 1rem;
+    color: var(--text-secondary-muted);
+    max-width: 520px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+}
+
+.gallery-cta .cta-links {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ============================================================
+   LIGHTBOX MODAL (Existing - keep as is)
+   ============================================================ */
+/* ... lightbox styles remain unchanged ... */
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+    .masonry-grid {
+        column-count: 2;
+        column-gap: 20px;
+    }
+
+    .impact-stats .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-hero {
+        padding: 120px 0 32px;
+    }
+
+    .gallery-hero h1 {
+        font-size: 30px;
+    }
+
+    .masonry-grid {
+        column-count: 1;
+        column-gap: 16px;
+    }
+
+    .masonry-item {
+        margin-bottom: 16px;
+    }
+
+    .masonry-item .overlay {
+        padding: 30px 16px 12px;
+    }
+
+    .masonry-item .overlay .caption {
+        font-size: 12px;
+    }
+
+    .gallery-filter .filter-scroll {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 4px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .gallery-filter .filter-scroll::-webkit-scrollbar {
+        height: 2px;
+    }
+
+    .gallery-filter .filter-scroll::-webkit-scrollbar-thumb {
+        background: var(--color-slate-light);
+        border-radius: 4px;
+    }
+
+    .filter-btn {
+        white-space: nowrap;
+        font-size: 0.75rem;
+        padding: 6px 14px;
+    }
+
+    .impact-stats .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .gallery-cta .cta-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-cta .cta-links .btn-primary-pill,
+    .gallery-cta .cta-links .btn-outline-dark {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-hero h1 {
+        font-size: 26px;
+    }
+
+    .masonry-item .overlay .caption {
+        font-size: 11px;
+    }
+
+    .impact-stats .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    .gallery-hero-bg {
+        min-height: 60vh;
+        padding: 120px 5% 48px;
+    }
+
+    .gallery-hero-bg .gallery-hero-content h1 {
+        font-size: 32px;
+    }
+
+    .gallery-hero-bg .gallery-hero-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-hero-bg .gallery-hero-content h1 {
+        font-size: 28px;
+    }
+}

@@ -1337,3 +1337,195 @@
         font-size: 11px;
     }
 }
+
+/* ============================================================
+   FAQ SECTION (Premium Accordion)
+   ============================================================ */
+.faq-section {
+    background: var(--color-white);
+}
+
+.faq-section .section-label {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 48px;
+}
+
+.faq-section .section-label .tag {
+    color: var(--color-primary-base);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.faq-section .section-label h2 {
+    font-size: clamp(28px, 3.5vw, 38px);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 8px;
+    color: var(--text-primary-dark);
+}
+
+.faq-section .section-label p {
+    font-size: 1rem;
+    color: var(--text-secondary-muted);
+    line-height: 1.7;
+}
+
+.faq-grid {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.faq-item {
+    background: var(--color-white);
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--color-slate-light);
+    overflow: hidden;
+    transition: all 0.3s var(--transition-premium);
+}
+
+.faq-item:hover {
+    border-color: var(--color-primary-base);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+/* --- FAQ Question Button --- */
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 24px;
+    background: transparent;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary-dark);
+    cursor: pointer;
+    transition: all 0.3s var(--transition-premium);
+    text-align: left;
+    line-height: 1.4;
+}
+
+.faq-question:hover {
+    background: var(--color-off-white);
+}
+
+.faq-question span {
+    flex: 1;
+}
+
+.faq-question i {
+    font-size: 0.85rem;
+    color: var(--text-disabled);
+    transition: all 0.3s var(--transition-premium);
+    flex-shrink: 0;
+}
+
+.faq-question[aria-expanded="true"] i {
+    transform: rotate(180deg);
+    color: var(--color-primary-base);
+}
+
+/* --- FAQ Answer --- */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 24px;
+    opacity: 0;
+    transition: all 0.4s var(--transition-premium);
+}
+
+.faq-answer p {
+    font-size: 0.95rem;
+    color: var(--text-secondary-muted);
+    line-height: 1.7;
+    margin: 0;
+    padding-bottom: 18px;
+}
+
+.faq-answer p a {
+    color: var(--color-primary-base);
+    font-weight: 500;
+    transition: color 0.3s var(--transition-premium);
+}
+
+.faq-answer p a:hover {
+    color: var(--color-accent-gold);
+}
+
+/* --- FAQ Item Active State --- */
+.faq-item.active {
+    border-color: var(--color-primary-base);
+    box-shadow: 0 4px 20px rgba(6, 78, 59, 0.06);
+}
+
+.faq-item.active .faq-question {
+    background: var(--color-off-white);
+}
+
+.faq-item.active .faq-question i {
+    color: var(--color-primary-base);
+    transform: rotate(180deg);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    .faq-section .section-label {
+        margin-bottom: 32px;
+    }
+
+    .faq-section .section-label h2 {
+        font-size: 24px;
+    }
+
+    .faq-grid {
+        gap: 6px;
+    }
+
+    .faq-question {
+        padding: 14px 18px;
+        font-size: 0.9rem;
+    }
+
+    .faq-answer p {
+        font-size: 0.85rem;
+        padding-bottom: 14px;
+    }
+
+    .faq-answer {
+        padding: 0 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-question {
+        padding: 12px 14px;
+        font-size: 0.85rem;
+        gap: 12px;
+    }
+
+    .faq-question i {
+        font-size: 0.75rem;
+    }
+
+    .faq-answer {
+        padding: 0 14px;
+    }
+
+    .faq-answer p {
+        font-size: 0.8rem;
+        padding-bottom: 12px;
+    }
+}

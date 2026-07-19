@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-KE">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,30 +11,47 @@
     <meta name="description" content="Discover how the Nzoka Kivuva Foundation is empowering youth in Machakos County to participate in community development and governance. Learn how young people are shaping their communities." />
     <meta name="keywords" content="youth-led community projects Kenya, youth advocacy Machakos, public participation youth Kenya, youth in governance and civic engagement, youth empowerment through civic participation, Machakos County youth development" />
     <link rel="canonical" href="https://nzokakivuvafoundation.org/news/youth-civic-engagement-governance-machakos.html" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Nzoka Kivuva Foundation" />
 
-    <!-- Open Graph -->
+    <!-- ============================================================
+    THEME COLOR (Mobile Browser)
+    ============================================================ -->
+    <meta name="theme-color" content="#064e3b" />
+
+    <!-- ============================================================
+    OPEN GRAPH (Social Sharing)
+    ============================================================ -->
+    <meta property="og:type" content="article" />
     <meta property="og:title" content="Amplifying Voices: Involving Machakos Youth in Community Development and Governance" />
     <meta property="og:description" content="Discover how the Nzoka Kivuva Foundation is empowering youth in Machakos County to participate in community development and governance. Learn how young people are shaping their communities." />
-    <meta property="og:type" content="article" />
     <meta property="og:url" content="https://nzokakivuvafoundation.org/news/youth-civic-engagement-governance-machakos.html" />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1200&h=630&fit=crop" />
+    <meta property="og:site_name" content="Nzoka Kivuva Foundation" />
+    <meta property="og:locale" content="en_KE" />
+    <meta property="og:image" content="https://nzokakivuvafoundation.org/nzoka9.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Young people participating in a community meeting in Machakos County" />
 
-    <!-- Twitter Cards -->
+    <!-- ============================================================
+    TWITTER CARDS
+    ============================================================ -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Amplifying Voices: Involving Machakos Youth in Community Development and Governance" />
     <meta name="twitter:description" content="Discover how the Nzoka Kivuva Foundation is empowering youth in Machakos County to participate in community development and governance." />
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1200&h=630&fit=crop" />
+    <meta name="twitter:image" content="https://nzokakivuvafoundation.org/nzoka9.webp" />
+    <meta name="twitter:site" content="@NzokaFoundation" />
 
-    <!-- Schema.org Article Markup -->
+    <!-- ============================================================
+    SCHEMA.ORG ARTICLE MARKUP
+    ============================================================ -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "Amplifying Voices: Involving Machakos Youth in Community Development and Governance",
             "description": "Discover how the Nzoka Kivuva Foundation is empowering youth in Machakos County to participate in community development and governance. Learn how young people are shaping their communities.",
-            "image": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1200&h=630&fit=crop",
+            "image": "https://nzokakivuvafoundation.org/nzoka9.webp",
             "author": {
                 "@type": "Organization",
                 "name": "Nzoka Kivuva Foundation"
@@ -44,9 +61,43 @@
             "publisher": {
                 "@type": "Organization",
                 "name": "Nzoka Kivuva Foundation"
+            },
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://nzokakivuvafoundation.org/news/youth-civic-engagement-governance-machakos.html"
             }
         }
     </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://nzokakivuvafoundation.org/"
+            }, {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "News",
+                "item": "https://nzokakivuvafoundation.org/news.html"
+            }, {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Civic Engagement",
+                "item": "https://nzokakivuvafoundation.org/news/youth-civic-engagement-governance-machakos.html"
+            }]
+        }
+    </script>
+
+    <!-- ============================================================
+    PERFORMANCE: PRELOAD CRITICAL ASSETS
+    ============================================================ -->
+    <link rel="preload" as="image" href="../nzoka-kivuva-favicon.webp" />
+    <link rel="preload" as="image" href="../nzoka9.webp" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,8 +107,11 @@
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="../nzoka-kivuva-favicon.webp" />
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <!-- Font Awesome (Non-blocking) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    </noscript>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../global.css" />
@@ -69,20 +123,20 @@
     <!-- ============================================================
     NAVBAR
     ============================================================ -->
-    <header class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <header class="navbar" id="navbar" role="navigation" aria-label="Primary Navigation">
         <div class="logo">
-            <img src="../nzoka-kivuva-favicon.webp" alt="Nzoka Kivuva Foundation Logo" height="80" />
+            <img src="../nzoka-kivuva-favicon.webp" alt="Nzoka Kivuva Foundation nzoka kivuva favicon in Machakos County, Kenya" width="80" height="80" />
         </div>
         <ul class="nav-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../about.html">About Us</a></li>
             <li><a href="../programs.html">Programs</a></li>
             <li><a href="../gallery.html">Gallery</a></li>
-            <li><a href="../news.html">News</a></li>
+            <li><a href="../news.html" aria-current="page">News</a></li>
             <li><a href="../contact.html">Contact</a></li>
             <li><a href="../get-involved.html" class="nav-cta">Partner With Us</a></li>
         </ul>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
@@ -90,7 +144,7 @@
     </header>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
         <a href="../index.html" class="mobile-link">Home</a>
         <a href="../about.html" class="mobile-link">About Us</a>
         <a href="../programs.html" class="mobile-link">Programs</a>
@@ -104,15 +158,15 @@
     ARTICLE HERO – 60vh Max, Full Image on Mobile
     ============================================================ -->
     <section class="article-hero" id="article">
-        <div class="hero-image" role="img" aria-label="Young people participating in a community meeting in Machakos County"></div>
+        <div class="hero-image" role="img" aria-label="Young people participating in a community meeting in Machakos County" style="background: linear-gradient(135deg, rgba(6, 78, 59, 0.75) 0%, rgba(15, 23, 42, 0.65) 100%), url('../nzoka9.webp') center/cover no-repeat; background-blend-mode: overlay; background-size: cover; background-position: center;"></div>
         <div class="container">
             <div class="hero-content reveal">
                 <span class="article-badge community">Civic Engagement</span>
                 <div class="article-meta">
-                    <span><i class="fas fa-calendar-alt"></i> July 21, 2026</span>
-                    <span><i class="fas fa-tag"></i> Youth Advocacy</span>
-                    <span><i class="fas fa-clock"></i> 5 min read</span>
-                    <span><i class="fas fa-users"></i> 150+ Youth</span>
+                    <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> July 21, 2026</span>
+                    <span><i class="fas fa-tag" aria-hidden="true"></i> Youth Advocacy</span>
+                    <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min read</span>
+                    <span><i class="fas fa-users" aria-hidden="true"></i> 150+ Youth</span>
                 </div>
                 <h1>Amplifying Voices: Involving Machakos Youth in Community Development and Governance</h1>
                 <p class="hero-excerpt">
@@ -130,7 +184,6 @@
     <section class="article-body">
         <div class="container">
 
-            <!-- Introduction -->
             <div class="article-content">
                 <p>
                     In Machakos County, young people are often excluded from decisions that affect their 
@@ -155,11 +208,10 @@
 
             <!-- Image 1: Community Meeting -->
             <div class="single-image reveal">
-                <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1000&q=80" alt="Young people participating in a community meeting in Machakos County" loading="lazy" />
+                <img src="../nzoka10.webp" alt="Nzoka Kivuva Foundation nzoka in Machakos County, Kenya" width="1000" height="500" loading="lazy" decoding="async" />
                 <div class="image-caption">Young people participating in a community development meeting in Machakos County</div>
             </div>
 
-            <!-- Content -->
             <div class="article-content">
 
                 <h2>The Youth Voice Gap in Rural Governance</h2>
@@ -178,7 +230,6 @@
                     to take advantage of these opportunities.
                 </p>
 
-                <!-- Stats Grid -->
                 <div class="stats-grid reveal">
                     <div class="stat-item">
                         <span class="stat-number">150+</span>
@@ -214,11 +265,11 @@
                 </p>
 
                 <ul>
-                    <li><i class="fas fa-chalkboard-teacher"></i> <strong>Civic Education Workshops</strong> – Understanding governance and public participation</li>
-                    <li><i class="fas fa-comments"></i> <strong>Advocacy Skills Training</strong> – How to speak up and be heard</li>
-                    <li><i class="fas fa-users"></i> <strong>Community Forums</strong> – Platforms for youth to present their ideas</li>
-                    <li><i class="fas fa-handshake"></i> <strong>Leadership Development</strong> – Building the next generation of leaders</li>
-                    <li><i class="fas fa-project-diagram"></i> <strong>Project Planning</strong> – Turning ideas into action</li>
+                    <li><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i> <strong>Civic Education Workshops</strong> – Understanding governance and public participation</li>
+                    <li><i class="fas fa-comments" aria-hidden="true"></i> <strong>Advocacy Skills Training</strong> – How to speak up and be heard</li>
+                    <li><i class="fas fa-users" aria-hidden="true"></i> <strong>Community Forums</strong> – Platforms for youth to present their ideas</li>
+                    <li><i class="fas fa-handshake" aria-hidden="true"></i> <strong>Leadership Development</strong> – Building the next generation of leaders</li>
+                    <li><i class="fas fa-project-diagram" aria-hidden="true"></i> <strong>Project Planning</strong> – Turning ideas into action</li>
                 </ul>
 
                 <p>
@@ -259,11 +310,11 @@
                 </p>
 
                 <ul>
-                    <li><i class="fas fa-check-circle" style="color:var(--color-primary-base);"></i> <strong>Better Policies</strong> – Youth bring fresh perspectives and innovative ideas</li>
-                    <li><i class="fas fa-check-circle" style="color:var(--color-primary-base);"></i> <strong>Stronger Communities</strong> – Youth-led initiatives build social cohesion</li>
-                    <li><i class="fas fa-check-circle" style="color:var(--color-primary-base);"></i> <strong>Reduced Discontent</strong> – Young people feel heard and valued</li>
-                    <li><i class="fas fa-check-circle" style="color:var(--color-primary-base);"></i> <strong>Sustainable Development</strong> – Youth-led projects are more likely to succeed</li>
-                    <li><i class="fas fa-check-circle" style="color:var(--color-primary-base);"></i> <strong>Future Leaders</strong> – Today's youth advocates become tomorrow's leaders</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--color-primary-base);" aria-hidden="true"></i> <strong>Better Policies</strong> – Youth bring fresh perspectives and innovative ideas</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--color-primary-base);" aria-hidden="true"></i> <strong>Stronger Communities</strong> – Youth-led initiatives build social cohesion</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--color-primary-base);" aria-hidden="true"></i> <strong>Reduced Discontent</strong> – Young people feel heard and valued</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--color-primary-base);" aria-hidden="true"></i> <strong>Sustainable Development</strong> – Youth-led projects are more likely to succeed</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--color-primary-base);" aria-hidden="true"></i> <strong>Future Leaders</strong> – Today's youth advocates become tomorrow's leaders</li>
                 </ul>
 
                 <p>
@@ -279,10 +330,10 @@
                 </p>
 
                 <ul>
-                    <li><span class="gold-icon"><i class="fas fa-arrow-right"></i></span> Expand civic education to all 18 sub-counties in Machakos</li>
-                    <li><span class="gold-icon"><i class="fas fa-arrow-right"></i></span> Establish a youth council to influence county policies</li>
-                    <li><span class="gold-icon"><i class="fas fa-arrow-right"></i></span> Create a youth-led community development fund</li>
-                    <li><span class="gold-icon"><i class="fas fa-arrow-right"></i></span> Build partnerships with the county government for youth-inclusive planning</li>
+                    <li><span class="gold-icon"><i class="fas fa-arrow-right" aria-hidden="true"></i></span> Expand civic education to all 18 sub-counties in Machakos</li>
+                    <li><span class="gold-icon"><i class="fas fa-arrow-right" aria-hidden="true"></i></span> Establish a youth council to influence county policies</li>
+                    <li><span class="gold-icon"><i class="fas fa-arrow-right" aria-hidden="true"></i></span> Create a youth-led community development fund</li>
+                    <li><span class="gold-icon"><i class="fas fa-arrow-right" aria-hidden="true"></i></span> Build partnerships with the county government for youth-inclusive planning</li>
                 </ul>
 
                 <p>
@@ -295,16 +346,15 @@
             <!-- Image 2: Youth Advocacy -->
             <div class="image-grid reveal">
                 <div class="image-item">
-                    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&q=80" alt="Youth advocacy workshop" loading="lazy" />
+                    <img src="../nzoka11.webp" alt="Nzoka Kivuva Foundation nzoka in Machakos County, Kenya" width="600" height="400" loading="lazy" decoding="async" />
                     <div class="image-caption">Young people participating in an advocacy skills training workshop</div>
                 </div>
                 <div class="image-item">
-                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80" alt="Youth presenting to community leaders" loading="lazy" />
+                    <img src="../nzoka12.webp" alt="Nzoka Kivuva Foundation nzoka in Machakos County, Kenya" width="600" height="400" loading="lazy" decoding="async" />
                     <div class="image-caption">Youth presenting their ideas to community leaders and decision-makers</div>
                 </div>
             </div>
 
-            <!-- More Content -->
             <div class="article-content">
 
                 <h2>How You Can Help</h2>
@@ -316,16 +366,14 @@
                 </p>
 
                 <ul>
-                    <li><i class="fas fa-arrow-right" style="color:var(--color-accent-gold);"></i> <strong>KSh 1,000</strong> – Provides civic education materials for 10 youth</li>
-                    <li><i class="fas fa-arrow-right" style="color:var(--color-accent-gold);"></i> <strong>KSh 2,500</strong> – Funds a community forum with 50 youth</li>
-                    <li><i class="fas fa-arrow-right" style="color:var(--color-accent-gold);"></i> <strong>KSh 5,000</strong> – Sponsors a youth leadership workshop</li>
-                    <li><i class="fas fa-arrow-right" style="color:var(--color-accent-gold);"></i> <strong>KSh 10,000</strong> – Supports a full civic engagement program cycle</li>
+                    <li><i class="fas fa-arrow-right" style="color:var(--color-accent-gold);" aria-hidden="true"></i> <strong>KSh 1,000</strong> – Provides civic education materials for 10 youth</li>
+                    <li><i class="fas fa-arrow-right" style="color:var(--color-accent-gold);" aria-hidden="true"></i> <strong>KSh 2,500</strong> – Funds a community forum with 50 youth</li>
+                    <li><i class="fas fa-arrow-right" style="color:var(--color-accent-gold);" aria-hidden="true"></i> <strong>KSh 5,000</strong> – Sponsors a youth leadership workshop</li>
+                    <li><i class="fas fa-arrow-right" style="color:var(--color-accent-gold);" aria-hidden="true"></i> <strong>KSh 10,000</strong> – Supports a full civic engagement program cycle</li>
                 </ul>
             </div>
 
-            <!-- ============================================================
-            DONOR CTA
-            ============================================================ -->
+            <!-- DONOR CTA -->
             <div class="donor-cta reveal">
                 <h3>Help Youth Lead Their Communities</h3>
                 <p>
@@ -334,27 +382,25 @@
                 </p>
                 <div class="cta-buttons">
                     <a href="../get-involved.html#donate" class="btn-donate">
-                        <i class="fas fa-heart"></i> Donate Now
+                        <i class="fas fa-heart" aria-hidden="true"></i> Donate Now
                     </a>
                     <a href="../get-involved.html" class="btn-outline-light">
-                        <i class="fas fa-handshake"></i> Partner With Us
+                        <i class="fas fa-handshake" aria-hidden="true"></i> Partner With Us
                     </a>
                 </div>
             </div>
 
-            <!-- ============================================================
-            RELATED STORIES
-            ============================================================ -->
+            <!-- RELATED STORIES -->
             <div class="related-stories reveal">
                 <div class="related-header">
                     <h3>Related Stories</h3>
-                    <a href="../news.html" class="view-all-link">View all <i class="fas fa-arrow-right"></i></a>
+                    <a href="../news.html" class="view-all-link">View all <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
                 <div class="related-grid">
 
                     <a href="inter-school-sports-gala.html" class="related-card">
                         <div class="related-card-img">
-                            <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?w=400&h=250&fit=crop" alt="Sports gala" loading="lazy" />
+                            <img src="../WhatsApp%20Image%202026-07-14%20at%201.29.30%20PM.jpeg" alt="Nzoka Kivuva Foundation WhatsApp%Image% %at%..%PM in Machakos County, Kenya" width="400" height="250" loading="lazy" decoding="async" />
                             <span class="related-badge sports">Community</span>
                         </div>
                         <div class="related-card-body">
@@ -365,7 +411,7 @@
 
                     <a href="sports-against-drug-abuse-machakos.html" class="related-card">
                         <div class="related-card-img">
-                            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=250&fit=crop" alt="Sports against drug abuse" loading="lazy" />
+                            <img src="../nzoka3.webp" alt="Nzoka Kivuva Foundation nzoka in Machakos County, Kenya" width="400" height="250" loading="lazy" decoding="async" />
                             <span class="related-badge community">Social Change</span>
                         </div>
                         <div class="related-card-body">
@@ -376,7 +422,7 @@
 
                     <a href="mentorship-career-guidance-machakos.html" class="related-card">
                         <div class="related-card-img">
-                            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=250&fit=crop" alt="Mentorship" loading="lazy" />
+                            <img src="../nzoka12.webp" alt="Nzoka Kivuva Foundation nzoka in Machakos County, Kenya" width="400" height="250" loading="lazy" decoding="async" />
                             <span class="related-badge education">Mentorship</span>
                         </div>
                         <div class="related-card-body">
@@ -391,7 +437,7 @@
             <!-- Back Link -->
             <div class="article-content">
                 <a href="../news.html" class="back-link">
-                    <i class="fas fa-arrow-left"></i> Back to all stories
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to all stories
                 </a>
             </div>
 
@@ -406,12 +452,12 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="logo-footer">
-                        <img src="../nzoka-kivuva-favicon.webp" alt="Nzoka Kivuva Foundation" />
-                        <span>Nzoka KIVUVA <span style="color: #f59e0b;">FOUNDATION</span></span>
+                        <img src="../nzoka-kivuva-favicon.webp" alt="Nzoka Kivuva Foundation nzoka kivuva favicon in Machakos County, Kenya" width="48" height="48" loading="lazy" decoding="async" />
+                        <span>NZIOKA KIVUVA <span style="color: #f59e0b;">FOUNDATION</span></span>
                     </div>
                     <p>A registered foundation dedicated to youth empowerment, sports equity, and community transformation across Kenya.</p>
                     <div class="footer-legal-badge">
-                        <i class="fas fa-certificate"></i>
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
                         Registered Entity No. <strong>CLG-BWTORQPV</strong>
                     </div>
                 </div>
@@ -419,18 +465,18 @@
                     <h4>Get in Touch</h4>
                     <address>
                         <span class="contact-line">
-                            <i class="fas fa-location-dot"></i>
-                            <a href="https://maps.app.goo.gl/D8fQ3Zjnwii13CqV7" target="_blank" rel="noopener">
+                            <i class="fas fa-location-dot" aria-hidden="true"></i>
+                            <a href="https://maps.app.goo.gl/D8fQ3Zjnwii13CqV7" target="_blank" rel="noopener noreferrer">
                                 Top Doctors Plaza, 4th Floor<br />
                                 <span class="sub-text">Old Namanga Road, Kitengela</span>
                             </a>
                         </span>
                         <span class="contact-line">
-                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-phone" aria-hidden="true"></i>
                             <a href="tel:+254710599653">+254 710 599 653</a>
                         </span>
                         <span class="contact-line">
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                             <a href="mailto:info@nzokakivuvafoundation.org">info@nzokakivuvafoundation.org</a>
                         </span>
                     </address>
@@ -453,27 +499,38 @@
                         <input type="hidden" name="_template" value="table" />
                         <input type="hidden" name="_next" value="https://nzokakivuvafoundation.org/thank-you.html" />
                         <input type="hidden" name="_subject" value="New Newsletter Subscription" />
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
                         <div class="newsletter-input-group">
-                            <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email address" required />
-                            <button type="submit" class="newsletter-btn" id="newsletterSubmit">
-                                <i class="fas fa-paper-plane"></i>
+                            <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email address" required autocomplete="email" inputmode="email" aria-label="Email address" />
+                            <button type="submit" class="newsletter-btn" id="newsletterSubmit" aria-label="Subscribe to newsletter">
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i>
                             </button>
                         </div>
                         <div class="newsletter-feedback" id="newsletterFeedback"></div>
                     </form>
                     <div class="social-icons">
-                        <a href="#" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" target="_blank" rel="noopener" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://wa.me/254710599653" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook (coming soon)">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X (coming soon)">
+                            <i class="fab fa-x-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram (coming soon)">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube (coming soon)">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://wa.me/254710599653" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <span>&copy; 2026 Nzoka Kivuva Foundation. All Rights Reserved.</span>
                 <span class="credit">
-                    Designed &amp; Developed by <a href="https://sarahadevelopers.co.ke/" target="_blank" rel="noopener">Saraha Developers Ltd</a>
+                    Designed &amp; Developed by <a href="https://sarahadevelopers.co.ke/" target="_blank" rel="noopener noreferrer">Saraha Developers Ltd</a>
                 </span>
             </div>
         </div>
@@ -481,15 +538,21 @@
 
     <!-- Floating WhatsApp Button -->
     <div class="whatsapp-float-wrapper">
-        <a href="https://wa.me/254710599653?text=Hello%20Nzoka%20Kivuva%20Foundation%2C%20I%20read%20about%20the%20civic%20engagement%20program." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
-            <i class="fab fa-whatsapp"></i>
+        <a href="https://wa.me/254710599653?text=Hello%20Nzoka%20Kivuva%20Foundation%2C%20I%20read%20about%20the%20civic%20engagement%20program."
+           class="whatsapp-float"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Chat with us on WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
             <span class="whatsapp-label">Chat with us</span>
         </a>
     </div>
 
-    <!-- JavaScript -->
-    <script src="../global.js"></script>
-    <script src="../news.js"></script>
+    <!-- ============================================================
+    JAVASCRIPT (Deferred)
+    ============================================================ -->
+    <script src="../global.js" defer></script>
+    <script src="../news.js" defer></script>
 
 </body>
 </html>
