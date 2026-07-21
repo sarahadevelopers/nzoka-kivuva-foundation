@@ -1,221 +1,210 @@
-document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('DOMContentLoaded', function() {
 
-    // ---------- 1. NAVBAR SCROLL ----------
-    const navbar = document.getElementById('navbar');
-    if (navbar) {
+        // ============================================================
+        // 1. NAVBAR SCROLL
+        // ============================================================
+        const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', function() {
-            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-            navbar.classList.toggle('scrolled', currentScroll > 30);
-        });
-    }
-
-    // ---------- 2. HAMBURGER MENU (Robust) ----------
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    if (hamburger && mobileMenu) {
-
-        // Toggle menu on hamburger click
-        hamburger.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const isOpen = mobileMenu.classList.toggle('open');
-            hamburger.classList.toggle('active');
-            hamburger.setAttribute('aria-expanded', isOpen);
-            document.body.style.overflow = isOpen ? 'hidden' : '';
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
 
-        // Close menu when clicking a link
-        document.querySelectorAll('.mobile-link, .mobile-cta').forEach(function(link) {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.remove('open');
-                hamburger.classList.remove('active');
+        // ============================================================
+        // 2. MOBILE MENU
+        // ============================================================
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', function() {
+            const isActive = mobileMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isActive);
+            document.body.style.overflow = isActive ? 'hidden' : '';
+        });
+
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
                 hamburger.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             });
         });
 
-        // Close menu on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-                mobileMenu.classList.remove('open');
-                hamburger.classList.remove('active');
-                hamburger.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Close menu when clicking outside (optional)
-        document.addEventListener('click', function(e) {
-            if (mobileMenu.classList.contains('open')) {
-                const isClickInside = mobileMenu.contains(e.target) || hamburger.contains(e.target);
-                if (!isClickInside) {
-                    mobileMenu.classList.remove('open');
-                    hamburger.classList.remove('active');
-                    hamburger.setAttribute('aria-expanded', 'false');
-                    document.body.style.overflow = '';
-                }
-            }
-        });
-
-        // Prevent body scroll when menu is open (touch devices)
-        mobileMenu.addEventListener('touchmove', function(e) {
-            e.preventDefault();
-        }, { passive: false });
-
-    } else {
-        console.warn('Hamburger or mobile menu elements not found. Check your HTML IDs.');
-    }
-
-    // ---------- 3. SCROLL REVEAL ----------
-    const revealElements = document.querySelectorAll('.reveal');
-    if (revealElements.length > 0) {
-        const revealObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
+        // ============================================================
+        // 3. SCROLL REVEAL
+        // ============================================================
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                 }
             });
         }, {
-            threshold: 0.10,
-            rootMargin: '0px 0px -40px 0px'
+            threshold: 0.12,
+            rootMargin: '0px 0px -20px 0px'
         });
+        revealElements.forEach(el => revealObserver.observe(el));
 
-        revealElements.forEach(function(el) {
-            revealObserver.observe(el);
-        });
-    }
+        // ============================================================
+        // 4. COUNTER ANIMATION
+        // ============================================================
+        const counters = document.querySelectorAll('.number');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-count'));
+                    if (!isNaN(target) && entry.target.innerText === '0') {
+                        animateCounter(entry.target, target);
+                    }
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.4 });
+        counters.forEach(counter => counterObserver.observe(counter));
 
-    // ---------- 4. TAB SWITCHER ----------
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const panels = {
-        active: document.getElementById('panel-active'),
-        past: document.getElementById('panel-past')
-    };
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = Math.max(1, Math.floor(target / 80));
+            const duration = 2000;
+            const stepTime = Math.max(16, Math.floor(duration / (target / increment)));
 
-    if (tabBtns.length > 0) {
-        tabBtns.forEach(function(btn) {
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.innerText = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.innerText = current.toLocaleString();
+                }
+            }, stepTime);
+        }
+
+        // ============================================================
+        // 5. TAB SWITCHER (Tournaments)
+        // ============================================================
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabPanels = {
+            active: document.getElementById('panel-active'),
+            past: document.getElementById('panel-past')
+        };
+
+        tabBtns.forEach(btn => {
             btn.addEventListener('click', function() {
-                // Remove active from all tabs
-                tabBtns.forEach(function(b) { b.classList.remove('active'); });
-                btn.classList.add('active');
+                const tab = this.dataset.tab;
 
-                // Hide all panels
-                Object.values(panels).forEach(function(p) {
-                    if (p) p.classList.remove('active');
+                // Update buttons
+                tabBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                this.setAttribute('aria-selected', 'true');
+
+                // Update panels
+                Object.keys(tabPanels).forEach(key => {
+                    const panel = tabPanels[key];
+                    if (key === tab) {
+                        panel.classList.add('active');
+                        panel.setAttribute('aria-hidden', 'false');
+                    } else {
+                        panel.classList.remove('active');
+                        panel.setAttribute('aria-hidden', 'true');
+                    }
+                });
+            });
+        });
+
+        // ============================================================
+        // 6. FAQ ACCORDION
+        // ============================================================
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+
+            question.addEventListener('click', function() {
+                const isActive = item.classList.contains('active');
+
+                // Close all other items
+                faqItems.forEach(other => {
+                    if (other !== item) {
+                        other.classList.remove('active');
+                        other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                    }
                 });
 
-                // Show the selected panel
-                const tab = btn.getAttribute('data-tab');
-                if (panels[tab]) {
-                    panels[tab].classList.add('active');
+                // Toggle current
+                if (isActive) {
+                    item.classList.remove('active');
+                    question.setAttribute('aria-expanded', 'false');
+                } else {
+                    item.classList.add('active');
+                    question.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            // Keyboard support
+            question.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
                 }
             });
         });
-    }
 
-    // ---------- 5. TOURNAMENT SLIDER (if present) ----------
-    const sliderWrapper = document.getElementById('sliderWrapper');
-    const sliderTrack = document.getElementById('sliderTrack');
-    const prevBtn = document.getElementById('sliderPrev');
-    const nextBtn = document.getElementById('sliderNext');
+        // ============================================================
+        // 7. NEWSLETTER FORM
+        // ============================================================
+        const newsletterForm = document.getElementById('newsletterForm');
+        const newsletterFeedback = document.getElementById('newsletterFeedback');
 
-    if (sliderWrapper && sliderTrack && prevBtn && nextBtn) {
-        function getScrollStep() {
-            const firstCard = sliderTrack.querySelector('.update-card');
-            if (!firstCard) return 300;
-            const cardWidth = firstCard.offsetWidth || 340;
-            const gap = 32;
-            return cardWidth + gap;
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                const email = document.getElementById('newsletterEmail').value.trim();
+
+                if (!email || !email.includes('@')) {
+                    e.preventDefault();
+                    newsletterFeedback.textContent = 'Please enter a valid email address.';
+                    newsletterFeedback.style.color = '#ef4444';
+                    newsletterFeedback.style.fontSize = '12px';
+                    return;
+                }
+
+                // Let form submit naturally to formsubmit.co
+                newsletterFeedback.textContent = 'Subscribing...';
+                newsletterFeedback.style.color = 'rgba(255,255,255,0.6)';
+            });
         }
 
-        prevBtn.addEventListener('click', function() {
-            sliderWrapper.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
-        });
+        // ============================================================
+        // 8. CONTACT FORM (if present)
+        // ============================================================
+        const contactForm = document.getElementById('contactForm');
+        const formFeedback = document.getElementById('formFeedback');
 
-        nextBtn.addEventListener('click', function() {
-            sliderWrapper.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
-        });
+        if (contactForm && formFeedback) {
+            contactForm.addEventListener('submit', function(e) {
+                const name = document.getElementById('fullName')?.value.trim();
+                const email = document.getElementById('emailAddress')?.value.trim();
+                const message = document.getElementById('message')?.value.trim();
 
-        // Keyboard support
-        sliderWrapper.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowLeft') {
-                e.preventDefault();
-                sliderWrapper.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
-            } else if (e.key === 'ArrowRight') {
-                e.preventDefault();
-                sliderWrapper.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
-            }
-        });
-        sliderWrapper.setAttribute('tabindex', '0');
-    }
-
-    // ---------- 6. NEWSLETTER FORM (if present) ----------
-    const newsletterForm = document.getElementById('newsletterForm');
-    const newsletterEmail = document.getElementById('newsletterEmail');
-    const newsletterFeedback = document.getElementById('newsletterFeedback');
-    const submitBtn = document.getElementById('newsletterSubmit');
-
-    if (newsletterForm && newsletterEmail && newsletterFeedback) {
-        newsletterForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            const email = newsletterEmail.value.trim();
-
-            newsletterFeedback.className = 'newsletter-feedback';
-            newsletterFeedback.textContent = '';
-
-            if (!email) {
-                newsletterFeedback.className = 'newsletter-feedback error';
-                newsletterFeedback.textContent = 'Please enter your email address.';
-                newsletterEmail.focus();
-                return;
-            }
-
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                newsletterFeedback.className = 'newsletter-feedback error';
-                newsletterFeedback.textContent = 'Please enter a valid email address.';
-                newsletterEmail.focus();
-                return;
-            }
-
-            newsletterFeedback.className = 'newsletter-feedback';
-            newsletterFeedback.textContent = 'Subscribing...';
-            if (submitBtn) submitBtn.disabled = true;
-
-            try {
-                const formData = new FormData(this);
-
-                const response = await fetch(this.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                });
-
-                if (response.ok) {
-                    newsletterFeedback.className = 'newsletter-feedback success';
-                    newsletterFeedback.textContent = '✓ Subscribed successfully! Check your email.';
-                    newsletterEmail.value = '';
-                } else {
-                    const data = await response.json();
-                    newsletterFeedback.className = 'newsletter-feedback error';
-                    newsletterFeedback.textContent = data.message || 'Something went wrong. Please try again.';
+                if (!name || !email || !message) {
+                    e.preventDefault();
+                    formFeedback.textContent = 'Please fill in all required fields.';
+                    formFeedback.style.color = '#ef4444';
+                    return;
                 }
-            } catch (error) {
-                newsletterFeedback.className = 'newsletter-feedback error';
-                newsletterFeedback.textContent = 'Server error. Please try again later.';
-                console.error('Newsletter error:', error);
-            } finally {
-                if (submitBtn) submitBtn.disabled = false;
-            }
-        });
 
-        newsletterEmail.addEventListener('input', function() {
-            if (newsletterFeedback.className.includes('error')) {
-                newsletterFeedback.className = 'newsletter-feedback';
-                newsletterFeedback.textContent = '';
-            }
-        });
-    }
+                if (!email.includes('@')) {
+                    e.preventDefault();
+                    formFeedback.textContent = 'Please enter a valid email address.';
+                    formFeedback.style.color = '#ef4444';
+                    return;
+                }
 
-});
+                formFeedback.textContent = 'Sending...';
+                formFeedback.style.color = '#475569';
+            });
+        }
+
+    });

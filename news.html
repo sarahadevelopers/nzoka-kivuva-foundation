@@ -847,20 +847,113 @@
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
-                <!-- Footer content same as other pages -->
+
+                <!-- Column 1: Brand + Mission -->
                 <div class="footer-brand">
                     <div class="logo-footer">
-                        <img src="nzoka-kivuva-favicon.webp" alt="Nzoka Kivuva Foundation" width="48" height="48" loading="lazy" decoding="async" />
+                        <img src="nzoka-kivuva-favicon.webp" alt="Nzoka Kivuva Foundation nzoka kivuva favicon in Machakos County, Kenya" width="48" height="48" loading="lazy" decoding="async" />
                         <span>NZOKA KIVUVA <span style="color: #f59e0b;">FOUNDATION</span></span>
                     </div>
-                    <p>A registered foundation dedicated to youth empowerment, sports equity, and community transformation across Kenya.</p>
+                    <p>
+                        A registered foundation dedicated to youth empowerment, sports equity,
+                        and community transformation across Kenya.
+                    </p>
                     <div class="footer-legal-badge">
                         <i class="fas fa-certificate" aria-hidden="true"></i>
                         Registered Entity No. <strong>CLG-BWTORQPV</strong>
                     </div>
                 </div>
-                <!-- ... (rest of footer) ... -->
+
+                <!-- Column 2: Contact & Location -->
+                <div class="footer-col">
+                    <h4>Get in Touch</h4>
+                    <address>
+                        <span class="contact-line">
+                            <i class="fas fa-location-dot" aria-hidden="true"></i>
+                            <a href="https://maps.app.goo.gl/D8fQ3Zjnwii13CqV7" target="_blank" rel="noopener noreferrer">
+                                Top Doctors Plaza, 4th Floor<br />
+                                <span class="sub-text">Old Namanga Road, Kitengela</span>
+                            </a>
+                        </span>
+                        <span class="contact-line">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <a href="tel:+254702548585">+254 702 548 585</a>
+                        </span>
+                        <span class="contact-line">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <a href="mailto:info@nzokakivuvafoundation.org">info@nzokakivuvafoundation.org</a>
+                        </span>
+                    </address>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Our Programs</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="get-involved.html">Get Involved</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="legal.html">Legal &amp; Transparency</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter Subscription -->
+                <div class="footer-col footer-social" id="footer-newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <p class="newsletter-text">
+                        Stay updated on tournaments, scholarships, and community events across Machakos County.
+                    </p>
+
+                    <form class="newsletter-form" id="newsletterForm" action="https://formsubmit.co/info@nzokakivuvafoundation.org" method="POST">
+                        <!-- Honeypot (anti-spam) -->
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+                        <input type="hidden" name="_captcha" value="true" />
+                        <input type="hidden" name="_template" value="table" />
+                        <input type="hidden" name="_next" value="https://nzokakivuvafoundation.org/thank-you.html" />
+                        <input type="hidden" name="_subject" value="New Newsletter Subscription" />
+
+                        <div class="newsletter-input-group">
+                            <input
+                                type="email"
+                                id="newsletterEmail"
+                                name="email"
+                                placeholder="Enter your email address"
+                                required
+                                autocomplete="email"
+                                inputmode="email"
+                                aria-label="Email address"
+                            />
+                            <button type="submit" class="newsletter-btn" id="newsletterSubmit" aria-label="Subscribe to newsletter">
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                            </button>
+                        </div>
+
+                        <div class="newsletter-feedback" id="newsletterFeedback"></div>
+                    </form>
+
+                    <div class="social-icons">
+                        <!-- Replace href="#" with actual URLs when available -->
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook (coming soon)">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X (coming soon)">
+                            <i class="fab fa-x-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram (coming soon)">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube (coming soon)">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                        </a>
+                       
+                    </div>
+                </div>
+
             </div>
+
+            <!-- Bottom Bar -->
             <div class="footer-bottom">
                 <span>&copy; 2026 Nzoka Kivuva Foundation. All Rights Reserved.</span>
                 <span class="credit">
@@ -870,9 +963,10 @@
         </div>
     </footer>
 
+
     <!-- Floating WhatsApp Button -->
     <div class="whatsapp-float-wrapper">
-        <a href="https://wa.me/254710599653?text=Hello%20Nzoka%20Kivuva%20Foundation%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20programs."
+        <a href="https://wa.me/254702548585?text=Hello%20Nzoka%20Kivuva%20Foundation%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20programs."
            class="whatsapp-float"
            target="_blank"
            rel="noopener noreferrer"

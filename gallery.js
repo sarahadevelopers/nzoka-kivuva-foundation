@@ -58,48 +58,48 @@ document.addEventListener('DOMContentLoaded', function() {
         // Sports & Tournaments
         {
             src: 'WhatsApp Image 2026-07-14 at 1.27.47 PM.jpeg',
-            caption: 'Under-17 League Finals, Wote, Makueni',
+            caption: 'Under-17 League Finals, Mwala, Machakos',
             category: 'sports'
         },
         {
             src: 'WhatsApp Image 2026-07-14 at 1.27.56 PM.jpeg',
-            caption: 'Community Football Training, Kibwezi',
+            caption: 'Community Football Training, Kabaa',
             category: 'sports'
         },
         {
             src: 'WhatsApp Image 2026-07-14 at 1.29.30 PM.jpeg',
-            caption: 'Makueni County Inter-Schools Gala, Wote',
+            caption: 'Machakos County Inter-Schools Gala, Mwala',
             category: 'sports'
         },
         {
             src: 'WhatsApp Image 2026-07-14 at 1.29.43 PM.jpeg',
-            caption: 'Coaches Training & Certification, Makindu',
+            caption: 'Coaches Training & Certification, Makutano',
             category: 'sports'
         },
         {
             src: 'WhatsApp Image 2026-07-14 at 1.29.45 PM (1).jpeg',
-            caption: 'Unity Tournament – Bridging Social Divides, Makueni',
+            caption: 'Unity Tournament – Bridging Social Divides, Machakos',
             category: 'sports'
         },
         {
             src: 'WhatsApp Image 2026-07-14 at 1.31.24 PM (2).jpeg',
-            caption: 'Vocational Training & Skills Development, Kitengela',
+            caption: 'Vocational Training & Skills Development, Mwala',
             category: 'education'   // Actually vocational is education
         },
         {
             src: 'WhatsApp Image 2026-07-14 at 1.31.33 PM.jpeg',
-            caption: 'Girls’ Football & Gender Equality Program, Kibwezi',
+            caption: 'Community Outreach & Youth Engagement Activities',
             category: 'sports'
         },
         {
             src: 'WhatsApp Image 2026-07-14 at 1.31.35 PM.jpeg',
-            caption: 'Tournament Victory Celebration, Makindu',
+            caption: 'Tournament Victory Celebration, Makutano',
             category: 'sports'
         },
         // Education & Scholarships
         {
             src: 'WhatsApp Image 2026-07-14 at 1.27.50 PM.jpeg',
-            caption: 'Scholarship Award Ceremony, Kitengela',
+            caption: 'Scholarship Award Ceremony, Mwala',
             category: 'education'
         },
         {
@@ -114,12 +114,12 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             src: 'nzoka3.webp',
-            caption: 'Supporting Vulnerable Children Across Rural Communities',
+            caption: 'Ulaani Women FC – Empowering Girls Through Football',
             category: 'community'
         },
         {
             src: 'nzoka4.webp',
-            caption: 'Community Outreach & Youth Engagement Activities',
+            caption: 'Girls’ Football & Gender Equality Program, Kabaa',
             category: 'community'
         },
         {
@@ -159,28 +159,28 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             src: 'nzoka12.webp',
-            caption: 'Nzoka Kivuva Foundation Boys Football Development Program',
+            caption: 'Supporting Vulnerable Children Across Rural Communities',
             category: 'sports'
         },
         {
             src: 'nzoka13.webp',
-            caption: 'Mwala Starlets FC – Empowering Girls Through Football',
+            caption: 'Nzoka Kivuva Foundation Boys Football Development Program',
             category: 'sports'
         },
         // Community & Leadership
         {
             src: 'WhatsApp Image 2026-07-14 at 1.27.57 PM.jpeg',
-            caption: 'Mentorship & Life Skills Session, Makindu',
+            caption: 'Match After Mentorship & Life Skills Session, Makutano',
             category: 'leadership'
         },
         {
             src: 'WhatsApp Image 2026-07-14 at 1.29.47 PM (1).jpeg',
-            caption: 'Health & Wellness Outreach, Kibwezi',
+            caption: 'Health & Wellness Outreach Match, Kabaa',
             category: 'community'
         },
         {
             src: 'WhatsApp Image 2026-07-14 at 1.31.32 PM (1).jpeg',
-            caption: 'Youth Leadership Camp, Wote',
+            caption: 'Youth Leadership Camp, Mwala',
             category: 'leadership'
         }
     ];
